@@ -11,9 +11,6 @@
       location = "group:DACAdsSDK-Sample-ObjectiveC/DACAdsSDK-Sample-ObjectiveC.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:DACSVASDK-Sample-Swift/../DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC/DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:DACAdsSDK-Sample-Swift/DACAdsSDK-Sample-Swift.xcodeproj">
    </FileRef>
    <FileRef
