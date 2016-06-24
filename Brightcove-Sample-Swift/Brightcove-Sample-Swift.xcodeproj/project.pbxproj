@@ -1,0 +1,381 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		812B7F5F1C22CE7A0020DC30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812B7F5E1C22CE7A0020DC30 /* AppDelegate.swift */; };
+		812B7F611C22CE7A0020DC30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 812B7F601C22CE7A0020DC30 /* ViewController.swift */; };
+		812B7F641C22CE7A0020DC30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 812B7F621C22CE7A0020DC30 /* Main.storyboard */; };
+		812B7F661C22CE7A0020DC30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 812B7F651C22CE7A0020DC30 /* Assets.xcassets */; };
+		812B7F691C22CE7A0020DC30 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 812B7F671C22CE7A0020DC30 /* LaunchScreen.storyboard */; };
+		F7230ECA1CCDC45300811CEA /* DACSDKMASmartVisionAdPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7230EC91CCDC45300811CEA /* DACSDKMASmartVisionAdPlayer.swift */; };
+		F751B56C1C6AFC81003AB9F5 /* DACSDKMAAdControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F751B5671C6AFC81003AB9F5 /* DACSDKMAAdControlsView.swift */; };
+		F751B56D1C6AFC81003AB9F5 /* DACSDKMAAdDefaultController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F751B5681C6AFC81003AB9F5 /* DACSDKMAAdDefaultController.swift */; };
+		F751B56E1C6AFC81003AB9F5 /* DACSDKMAAdImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F751B5691C6AFC81003AB9F5 /* DACSDKMAAdImageGenerator.swift */; };
+		F751B5701C6AFCA6003AB9F5 /* DACSDKMA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F751B5651C6AFC81003AB9F5 /* DACSDKMA.framework */; };
+		F751B5711C6AFCA6003AB9F5 /* DACSDKMA.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F751B5651C6AFC81003AB9F5 /* DACSDKMA.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		812B7F761C22CF4C0020DC30 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F751B5711C6AFCA6003AB9F5 /* DACSDKMA.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		812B7F5B1C22CE7A0020DC30 /* Brightcove-Sample-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Brightcove-Sample-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		812B7F5E1C22CE7A0020DC30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		812B7F601C22CE7A0020DC30 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		812B7F631C22CE7A0020DC30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		812B7F651C22CE7A0020DC30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		812B7F681C22CE7A0020DC30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		812B7F6A1C22CE7A0020DC30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81C94F841D00177700A7F66E /* Brightcove-Sample-Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Brightcove-Sample-Swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		F7230EC91CCDC45300811CEA /* DACSDKMASmartVisionAdPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DACSDKMASmartVisionAdPlayer.swift; sourceTree = "<group>"; };
+		F751B5651C6AFC81003AB9F5 /* DACSDKMA.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DACSDKMA.framework; sourceTree = "<group>"; };
+		F751B5671C6AFC81003AB9F5 /* DACSDKMAAdControlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DACSDKMAAdControlsView.swift; sourceTree = "<group>"; };
+		F751B5681C6AFC81003AB9F5 /* DACSDKMAAdDefaultController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DACSDKMAAdDefaultController.swift; sourceTree = "<group>"; };
+		F751B5691C6AFC81003AB9F5 /* DACSDKMAAdImageGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DACSDKMAAdImageGenerator.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		812B7F581C22CE7A0020DC30 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F751B5701C6AFCA6003AB9F5 /* DACSDKMA.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		812B7F521C22CE7A0020DC30 = {
+			isa = PBXGroup;
+			children = (
+				F751B5631C6AFC81003AB9F5 /* DACSDKMA */,
+				812B7F5D1C22CE7A0020DC30 /* Brightcove-Sample-Swift */,
+				812B7F5C1C22CE7A0020DC30 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		812B7F5C1C22CE7A0020DC30 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				812B7F5B1C22CE7A0020DC30 /* Brightcove-Sample-Swift.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		812B7F5D1C22CE7A0020DC30 /* Brightcove-Sample-Swift */ = {
+			isa = PBXGroup;
+			children = (
+				812B7F5E1C22CE7A0020DC30 /* AppDelegate.swift */,
+				812B7F601C22CE7A0020DC30 /* ViewController.swift */,
+				812B7F621C22CE7A0020DC30 /* Main.storyboard */,
+				812B7F651C22CE7A0020DC30 /* Assets.xcassets */,
+				812B7F671C22CE7A0020DC30 /* LaunchScreen.storyboard */,
+				812B7F6A1C22CE7A0020DC30 /* Info.plist */,
+				81C94F841D00177700A7F66E /* Brightcove-Sample-Swift-Bridging-Header.h */,
+			);
+			path = "Brightcove-Sample-Swift";
+			sourceTree = "<group>";
+		};
+		F751B5631C6AFC81003AB9F5 /* DACSDKMA */ = {
+			isa = PBXGroup;
+			children = (
+				F751B5641C6AFC81003AB9F5 /* dynamic */,
+			);
+			name = DACSDKMA;
+			path = "../#sdks/DACSDKMA";
+			sourceTree = "<group>";
+		};
+		F751B5641C6AFC81003AB9F5 /* dynamic */ = {
+			isa = PBXGroup;
+			children = (
+				F751B5651C6AFC81003AB9F5 /* DACSDKMA.framework */,
+				F751B5661C6AFC81003AB9F5 /* src */,
+			);
+			path = dynamic;
+			sourceTree = "<group>";
+		};
+		F751B5661C6AFC81003AB9F5 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				F751B5671C6AFC81003AB9F5 /* DACSDKMAAdControlsView.swift */,
+				F751B5681C6AFC81003AB9F5 /* DACSDKMAAdDefaultController.swift */,
+				F751B5691C6AFC81003AB9F5 /* DACSDKMAAdImageGenerator.swift */,
+				F7230EC91CCDC45300811CEA /* DACSDKMASmartVisionAdPlayer.swift */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		812B7F5A1C22CE7A0020DC30 /* Brightcove-Sample-Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 812B7F6D1C22CE7A0020DC30 /* Build configuration list for PBXNativeTarget "Brightcove-Sample-Swift" */;
+			buildPhases = (
+				812B7F571C22CE7A0020DC30 /* Sources */,
+				812B7F581C22CE7A0020DC30 /* Frameworks */,
+				812B7F591C22CE7A0020DC30 /* Resources */,
+				812B7F761C22CF4C0020DC30 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Brightcove-Sample-Swift";
+			productName = "DACSDKMA-SampleBCOVPlayer-Swift";
+			productReference = 812B7F5B1C22CE7A0020DC30 /* Brightcove-Sample-Swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		812B7F531C22CE7A0020DC30 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "松崎健次郎";
+				TargetAttributes = {
+					812B7F5A1C22CE7A0020DC30 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 812B7F561C22CE7A0020DC30 /* Build configuration list for PBXProject "Brightcove-Sample-Swift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 812B7F521C22CE7A0020DC30;
+			productRefGroup = 812B7F5C1C22CE7A0020DC30 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				812B7F5A1C22CE7A0020DC30 /* Brightcove-Sample-Swift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		812B7F591C22CE7A0020DC30 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				812B7F691C22CE7A0020DC30 /* LaunchScreen.storyboard in Resources */,
+				812B7F661C22CE7A0020DC30 /* Assets.xcassets in Resources */,
+				812B7F641C22CE7A0020DC30 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		812B7F571C22CE7A0020DC30 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				812B7F611C22CE7A0020DC30 /* ViewController.swift in Sources */,
+				F751B56C1C6AFC81003AB9F5 /* DACSDKMAAdControlsView.swift in Sources */,
+				F751B56D1C6AFC81003AB9F5 /* DACSDKMAAdDefaultController.swift in Sources */,
+				F751B56E1C6AFC81003AB9F5 /* DACSDKMAAdImageGenerator.swift in Sources */,
+				812B7F5F1C22CE7A0020DC30 /* AppDelegate.swift in Sources */,
+				F7230ECA1CCDC45300811CEA /* DACSDKMASmartVisionAdPlayer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		812B7F621C22CE7A0020DC30 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				812B7F631C22CE7A0020DC30 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		812B7F671C22CE7A0020DC30 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				812B7F681C22CE7A0020DC30 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		812B7F6B1C22CE7A0020DC30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Brightcove-Player-SDK/ios/static\"",
+					"$(SRCROOT)/../#sdks/DACSDKMA/dynamic",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		812B7F6C1C22CE7A0020DC30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Brightcove-Player-SDK/ios/static\"",
+					"$(SRCROOT)/../#sdks/DACSDKMA/dynamic",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		812B7F6E1C22CE7A0020DC30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/../#sdks/DACSDKMA/dynamic",
+					"\"${PODS_ROOT}/Brightcove-Player-SDK/ios/static\"",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Brightcove-Sample-Swift/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.dac.Brightcove-Sample-Swift";
+				PRODUCT_NAME = "Brightcove-Sample-Swift";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Brightcove-Sample-Swift/Brightcove-Sample-Swift-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)";
+			};
+			name = Debug;
+		};
+		812B7F6F1C22CE7A0020DC30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/../#sdks/DACSDKMA/dynamic",
+					"\"${PODS_ROOT}/Brightcove-Player-SDK/ios/static\"",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Brightcove-Sample-Swift/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.dac.Brightcove-Sample-Swift";
+				PRODUCT_NAME = "Brightcove-Sample-Swift";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/Brightcove-Sample-Swift/Brightcove-Sample-Swift-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		812B7F561C22CE7A0020DC30 /* Build configuration list for PBXProject "Brightcove-Sample-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				812B7F6B1C22CE7A0020DC30 /* Debug */,
+				812B7F6C1C22CE7A0020DC30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		812B7F6D1C22CE7A0020DC30 /* Build configuration list for PBXNativeTarget "Brightcove-Sample-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				812B7F6E1C22CE7A0020DC30 /* Debug */,
+				812B7F6F1C22CE7A0020DC30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 812B7F531C22CE7A0020DC30 /* Project object */;
+}
