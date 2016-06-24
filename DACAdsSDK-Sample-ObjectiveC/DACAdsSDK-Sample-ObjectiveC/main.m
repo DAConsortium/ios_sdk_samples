@@ -2,8 +2,7 @@
 //  main.m
 //  DACAdsSDK-Sample-ObjectiveC
 //
-//  Created by 松崎健次郎 on 2016/06/13.
-//  Copyright © 2016年 松崎健次郎. All rights reserved.
+//  Copyright (c) 2016 D.A.Consortium Inc. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  DACAdsSDK-Sample-Swift
 //
-//  Copyright © 2015年 D.A.Consortium Inc. All rights reserved.
+//  Copyright © 2016 D.A.Consortium Inc. All rights reserved.
 //
 
 import UIKit

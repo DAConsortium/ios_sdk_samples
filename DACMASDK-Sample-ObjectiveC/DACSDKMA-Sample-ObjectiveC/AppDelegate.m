@@ -2,7 +2,7 @@
 //  AppDelegate.m
 //  DACSDKMA-SamplePlayer-ObjectiveC
 //
-//  Copyright © 2015 D.A.Consortium All rights reserved.
+//  Copyright © 2016 D.A.Consortium All rights reserved.
 //
 
 #import "AppDelegate.h"

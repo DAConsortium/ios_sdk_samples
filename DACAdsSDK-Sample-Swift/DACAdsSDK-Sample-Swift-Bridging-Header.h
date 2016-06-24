@@ -2,8 +2,7 @@
 //  DACAdsSDK-Sample-Swift-Bridging-Header.h
 //  DACAdsSDK-Sample-Swift
 //
-//  Created by 松崎健次郎 on 2016/06/13.
-//  Copyright © 2016年 D.A.Consortium Inc. All rights reserved.
+//  Copyright (c) 2016 D.A.Consortium Inc. All rights reserved.
 //
 
 

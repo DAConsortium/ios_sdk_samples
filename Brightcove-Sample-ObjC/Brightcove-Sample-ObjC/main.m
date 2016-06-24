@@ -2,7 +2,7 @@
 //  main.m
 //  DACSDKMA-SampleBCOVPlayer-ObjectiveC
 //
-//  Copyright (c) 2015 D.A.Consortium Inc. All rights reserved.
+//  Copyright (c) 2016 D.A.Consortium Inc. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

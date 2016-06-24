@@ -2,8 +2,7 @@
 //  AppDelegate.swift
 //  DACSDKMA-SampleBCOVPlayer-Swift
 //
-//  Created by 松崎健次郎 on 2015/12/17.
-//  Copyright © 2015年 松崎健次郎. All rights reserved.
+//  Copyright (c) 2016 D.A.Consortium Inc. All rights reserved.
 //
 
 import UIKit

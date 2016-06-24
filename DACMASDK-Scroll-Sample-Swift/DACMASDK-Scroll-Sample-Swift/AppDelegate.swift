@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  DACSDKMA-SampleScrollView-Swift
 //
-//  Copyright © 2015 D.A.Consortium Inc. All rights reserved.
+//  Copyright © 2016 D.A.Consortium Inc. All rights reserved.
 //
 
 import UIKit
