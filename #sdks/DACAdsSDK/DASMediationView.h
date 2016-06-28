@@ -2,7 +2,7 @@
 //  DASMediationView.h
 //  DACAdsSDK
 //
-//  Copyright (c) 2014年 D.A.Consortium. All rights reserved.
+//  Copyright © 2016 D.A.Consortium Inc. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -44,7 +44,6 @@
 - (void)sendRequestParams:(NSString *)event;
 
 @end
-
 
 
 #pragma mark - DASMediationViewDelegate

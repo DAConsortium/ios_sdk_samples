@@ -2,7 +2,7 @@
 //  DACAdsSDK-Bridging-Header.h
 //  DACAdsSDK
 //
-//  Copyright (c) 2016 D.A.Consortium. All rights reserved.
+//  Copyright © 2016 D.A.Consortium Inc. All rights reserved.
 //
 
 #ifndef DACAdsSDK_Bridging_Header_h
