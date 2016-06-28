@@ -129,5 +129,5 @@ const NSInteger placementID = 1; //mediationのplacementIDを設定します。
 
 ```
 
-### Step75. 動作確認をします
+### Step 7. 動作確認をします
 正しく広告が表示されることを確認して下さい。

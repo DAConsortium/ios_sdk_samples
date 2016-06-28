@@ -2,16 +2,16 @@
 //  FacebookRotateHandler.h
 //  FacebookRotateHandler
 //
-//  Copyright (c) 2016年 D.A.Consortium. All rights reserved.
+//  Copyright © 2016 D.A.Consortium Inc. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import "FBAudienceNetwork/FBAudienceNetwork.h"
-#import "DACAdsSDK.h"
 #import "DASMediationView.h"
 
 
 @interface FacebookRotateHandler : NSObject <DASMediationRotateHandler,FBAdViewDelegate>
+
 
 - (nullable instancetype)initWithPlacementID:(nonnull NSString *)placementID
                                       adSize:(FBAdSize)adSize

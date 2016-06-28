@@ -1,6 +1,6 @@
 //
 //  ViewController.m
-//  DACAdsSDK-Sample-ObjectiveC
+//  DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC
 //
 //  Copyright © 2016 D.A.Consortium Inc. All rights reserved.
 //
@@ -8,7 +8,7 @@
 #import "ViewController.h"
 #import "DASMediationView.h"
 #import "DACAdsSDK.h"
-#import "../../#sdks/FacebookRotateHandler/FacebookRotateHandler.h"
+#import "FacebookRotateHandler.h"
 
 @interface ViewController () <DASMediationViewDelegate>
 
@@ -25,7 +25,8 @@ NSString *const facebookID = @""; //facebookのplacementIDを設定します。
    [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    DASMediationView *mediationView = [[DASMediationView alloc] initWithFrame:CGRectMake(0.f, 20.f, 320.f, 50.f) placementID:placementID];
+    DASMediationView *mediationView = [[DASMediationView alloc] initWithFrame:CGRectMake(0.f, 20.f, self.view.bounds.size.width, 50.f) placementID:placementID];
+    
     self.facebookAdRotateHandler = [[FacebookRotateHandler alloc]
                                     initWithPlacementID:facebookID
                                     adSize:kFBAdSizeHeight50Banner
@@ -41,43 +42,43 @@ NSString *const facebookID = @""; //facebookのplacementIDを設定します。
 }
 
 //メディエーションビューが表示される直前に呼ばれます。
-- (void)mediationViewWillAppear:(DASMediationView *)mediationView
+- (void)DACMediationViewWillAppear:(DASMediationView *)mediationView
 {
     NSLog(@"%s: placementID: %td", __PRETTY_FUNCTION__, mediationView.placementID);
 }
 
 //メディエーションビューが表示された直後に呼ばれます。
-- (void)mediationViewDidAppear:(DASMediationView *)mediationView
+- (void)DACMediationViewDidAppear:(DASMediationView *)mediationView
 {
     NSLog(@"%s: placementID: %td", __PRETTY_FUNCTION__, mediationView.placementID);
 }
 
 //メディエーションビューが非表示になる直前に呼ばれます。
-- (void)mediationViewWillDisappear:(DASMediationView *)mediationView
+- (void)DACMediationViewWillDisappear:(DASMediationView *)mediationView
 {
     NSLog(@"%s: placementID: %td", __PRETTY_FUNCTION__, mediationView.placementID);
 }
 
 //メディエーションビューが非表示になった直後に呼ばれます。
-- (void)mediationViewDidDisappear:(DASMediationView *)mediationView
+- (void)DACMediationViewDidDisappear:(DASMediationView *)mediationView
 {
     NSLog(@"%s: placementID: %td", __PRETTY_FUNCTION__, mediationView.placementID);
 }
 
 //メディエーションビュー内に広告がロードされたタイミングで呼ばれます。
-- (void)mediationViewDidLoadAd:(DASMediationView *)mediationView
+- (void)DACMediationViewDidLoadAd:(DASMediationView *)mediationView
 {
     NSLog(@"%s: placementID: %td", __PRETTY_FUNCTION__, mediationView.placementID);
 }
 
 //メディエーションビュー内の広告がタップされたタイミングで呼ばれます。
-- (void)mediationViewDidClicked:(DASMediationView *)mediationView
+- (void)DACMediationViewDidClicked:(DASMediationView *)mediationView
 {
     NSLog(@"%s: placementID: %td", __PRETTY_FUNCTION__, mediationView.placementID);
 }
 
 //メディエーションビュー内でエラーが発生したタイミングで呼ばれます。
-- (void)mediationView:(DASMediationView *)mediationView didFailLoadWithError:(NSError *)error
+- (void)DACMediationView:(DASMediationView *)mediationView didFailLoadWithError:(NSError *)error
 {
     switch (error.code) {
         case DASErrorCodeTagDataNotFound:

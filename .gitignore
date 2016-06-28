@@ -6,3 +6,8 @@ xcuserdata/
 # and should therefore not be checked into the VCS.
 # 
 *.xccheckout
+
+Podfile.lock
+Pods/
+
+DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC.xcorkspace

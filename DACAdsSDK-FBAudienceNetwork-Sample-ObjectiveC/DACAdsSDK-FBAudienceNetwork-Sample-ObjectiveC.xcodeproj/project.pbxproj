@@ -16,8 +16,9 @@
 		8197CF751D0E4CB70032E189 /* DACAdsSDK_Sample_ObjectiveCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8197CF741D0E4CB70032E189 /* DACAdsSDK_Sample_ObjectiveCTests.m */; };
 		8197CF841D0E4D800032E189 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8197CF831D0E4D800032E189 /* SystemConfiguration.framework */; };
 		8197CF8A1D0E4E1A0032E189 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8197CF811D0E4D740032E189 /* AdSupport.framework */; };
-		8197CF8D1D0E4EE90032E189 /* libDACAdsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8197CF881D0E4DCD0032E189 /* libDACAdsSDK.a */; };
 		81C4640F1D1A67D8009944B6 /* FacebookRotateHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C4640E1D1A67D8009944B6 /* FacebookRotateHandler.m */; };
+		81F773751D228A5F00BDDF6B /* libDACAdsSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8197CF881D0E4DCD0032E189 /* libDACAdsSDK.a */; };
+		D0A3C33423DE39402656E62C /* libPods-DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4433C80C2E8A0FA58D2974 /* libPods-DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20472D2DA62A49E72FBE564E /* Pods-DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC/Pods-DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC.debug.xcconfig"; sourceTree = "<group>"; };
 		8197CF571D0E4CB70032E189 /* DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8197CF5B1D0E4CB70032E189 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8197CF5D1D0E4CB70032E189 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -49,8 +51,10 @@
 		8197CF861D0E4DCD0032E189 /* DACAdsSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DACAdsSDK.h; sourceTree = "<group>"; };
 		8197CF871D0E4DCD0032E189 /* DASMediationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DASMediationView.h; sourceTree = "<group>"; };
 		8197CF881D0E4DCD0032E189 /* libDACAdsSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDACAdsSDK.a; sourceTree = "<group>"; };
-		81C4640E1D1A67D8009944B6 /* FacebookRotateHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FacebookRotateHandler.m; path = "../#sdks/FacebookRotateHandler/FacebookRotateHandler.m"; sourceTree = "<group>"; };
-		81C464101D1A67E8009944B6 /* FacebookRotateHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FacebookRotateHandler.h; path = "../#sdks/FacebookRotateHandler/FacebookRotateHandler.h"; sourceTree = "<group>"; };
+		81C4640E1D1A67D8009944B6 /* FacebookRotateHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FacebookRotateHandler.m; sourceTree = "<group>"; };
+		81C464101D1A67E8009944B6 /* FacebookRotateHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FacebookRotateHandler.h; sourceTree = "<group>"; };
+		CA4615853479DBDE04A745E5 /* Pods-DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC.release.xcconfig"; path = "Pods/Target Support Files/Pods-DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC/Pods-DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC.release.xcconfig"; sourceTree = "<group>"; };
+		DE4433C80C2E8A0FA58D2974 /* libPods-DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +62,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8197CF8D1D0E4EE90032E189 /* libDACAdsSDK.a in Frameworks */,
+				81F773751D228A5F00BDDF6B /* libDACAdsSDK.a in Frameworks */,
 				8197CF8A1D0E4E1A0032E189 /* AdSupport.framework in Frameworks */,
 				8197CF841D0E4D800032E189 /* SystemConfiguration.framework in Frameworks */,
+				D0A3C33423DE39402656E62C /* libPods-DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +89,8 @@
 				8197CF591D0E4CB70032E189 /* DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC */,
 				8197CF731D0E4CB70032E189 /* DACAdsSDK-Sample-ObjectiveCTests */,
 				8197CF581D0E4CB70032E189 /* Products */,
+				CD620D4C1E9B94E6E9B6B93C /* Pods */,
+				8576C73B1F718C4099F4A48E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -147,6 +154,24 @@
 				81C4640E1D1A67D8009944B6 /* FacebookRotateHandler.m */,
 			);
 			name = FacebookRotateHandler;
+			path = "../#sdks/FacebookRotateHandler";
+			sourceTree = "<group>";
+		};
+		8576C73B1F718C4099F4A48E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DE4433C80C2E8A0FA58D2974 /* libPods-DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CD620D4C1E9B94E6E9B6B93C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				20472D2DA62A49E72FBE564E /* Pods-DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC.debug.xcconfig */,
+				CA4615853479DBDE04A745E5 /* Pods-DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,9 +181,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8197CF791D0E4CB70032E189 /* Build configuration list for PBXNativeTarget "DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC" */;
 			buildPhases = (
+				AB4D6847873E58584E4B3B94 /* 📦 Check Pods Manifest.lock */,
 				8197CF531D0E4CB70032E189 /* Sources */,
 				8197CF541D0E4CB70032E189 /* Frameworks */,
 				8197CF551D0E4CB70032E189 /* Resources */,
+				EA6F3BAA1C8EA0219791F2CF /* 📦 Embed Pods Frameworks */,
+				3D7280617556054B37704CB6 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -243,6 +271,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3D7280617556054B37704CB6 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC/Pods-DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB4D6847873E58584E4B3B94 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EA6F3BAA1C8EA0219791F2CF /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC/Pods-DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8197CF531D0E4CB70032E189 /* Sources */ = {
@@ -380,6 +456,7 @@
 		};
 		8197CF7A1D0E4CB70032E189 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 20472D2DA62A49E72FBE564E /* Pods-DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC/Info.plist";
@@ -392,6 +469,7 @@
 		};
 		8197CF7B1D0E4CB70032E189 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA4615853479DBDE04A745E5 /* Pods-DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC/Info.plist";
