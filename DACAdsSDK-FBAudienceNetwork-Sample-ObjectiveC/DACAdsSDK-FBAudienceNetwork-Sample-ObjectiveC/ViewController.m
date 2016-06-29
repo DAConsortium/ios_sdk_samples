@@ -18,7 +18,7 @@
 
 @implementation ViewController
 
-NSInteger const placementID = 32205; //mediationのplacementIDを設定します。
+NSInteger const placementID = 18859; //mediationのplacementIDを設定します。
 NSString *const facebookID = @""; //facebookのplacementIDを設定します。
 
 - (void)viewDidLoad {
