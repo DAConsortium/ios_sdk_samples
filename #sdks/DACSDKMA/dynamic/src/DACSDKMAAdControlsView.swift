@@ -2,7 +2,7 @@
 //  DACSDKMAAdControlsView.swift
 //  DACSDKMA
 //
-//  Copyright (c) 2016 D.A.Consortium Inc. All rights reserved.
+//  Copyright © 2016 D.A.Consortium Inc. All rights reserved.
 //
 
 import UIKit
