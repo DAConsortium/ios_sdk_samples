@@ -2,16 +2,16 @@
 - - -
 本マニュアルはDACMASDKをBrightcove-Player-SDKを使ったObjective-Cのプロジェクトに組み込む際のマニュアルになります。
 
-## 必要なツール,DACライブラリ
-* Xcode : 7.3+
-* iOS   : 8.0+
+## 必要なツール・DACライブラリ
+* Xcode：7.3+
+* iOS：8.0+
 * DACMultimediaAdsSDK(iOS)
  * dynamic/DACSDKMA.framework
  * dynamic/src
 * Brightcove-Player-SDK
 
 ## ソースコード組み込み手順
-以下はサンプルコードをそのまま使った場合の例になります。 カスタマイズが必要な場合はサンプルコードを参考にして, 変更して下さい。
+以下はサンプルコードをそのまま使った場合の例になります。カスタマイズが必要な場合はサンプルコードを参考にして変更して下さい。
 また、今回の手順ではプリロールかつ自動再生のみ流すことが可能です。
 
 ### Step 1: CocoaPodsを利用してBrightcove-Player-SDKをインストールします。
