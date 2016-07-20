@@ -2,17 +2,17 @@
 - - -
 本マニュアルはDACAdsSDKをObjective-Cで記述されたプロジェクトに組み込む際のマニュアルとなります。
 
-## 必要なツール,DACライブラリ
-* Xcode : 7.3+
-* iOS   : 7.0+
+## 必要なツール・ライブラリ
+* Xcode：7.3+
+* iOS：7.0+
 * DACAdsSDK(iOS)
 
 ## ソースコード組み込み手順
-以下はサンプルコードをそのまま使った場合の例になります。 カスタマイズが必要な場合はサンプルコードを参考にして, 変更して下さい。
+以下はサンプルコードをそのまま使った場合の例になります。 カスタマイズが必要な場合はサンプルコードを参考にして変更して下さい。
 
 ### Step 1: XcodeプロジェクトにSDKを追加します
 Xcode Projectを開きます。  
-プロジェクトにDACAdsSDKフォルダを追加します。（ドラッグ&ドロップで可能です。）"Choose options for adding these files"は"Added folders"は"Create groups"を選択し、"Finish" をクリックします。
+プロジェクトにDACAdsSDKフォルダを追加します（ドラッグ&ドロップで可能です）。"Choose options for adding these files"は"Added folders"は"Create groups"を選択し、"Finish" をクリックします。
 メインプロジェクトのプロジェクトエディタを起動し、ターゲットをクリックします。
 - [General]->[Linked Frameworks and Libraries]セクションを開き、左下の "+"をクリックします。  
 "Add Other..."をクリックし、DACAdsSDKフォルダ内libDACAdsSDKを選択します。
