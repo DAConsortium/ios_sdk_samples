@@ -28,7 +28,7 @@ $ pod install
 ```
 
 ### Step 3 :FacebookRotateHandlerを追加します。
-プロジェクトにDACAdsSDKとFacebookSDKを連携させるためのFacebookRotateHandlerを追加します。（Build PhaseにFacebookRotateHandler.mが追加されていることをご確認ください。）
+プロジェクトにDACAdsSDKとFacebookSDKを連携させるためのFacebookRotateHandlerを追加します。
 
 
 ### Step 4: frameworkをインポートします
@@ -53,8 +53,8 @@ const NSInteger placementID = 1; //mediationのplacementIDを設定します。
 ```ViewController.swift
     DASMediationView *mediationView = [[DASMediationView alloc] initWithFrame:CGRectMake(0.f, 20.f, 320.f, 50.f) placementID:placementID];
     self.facebookAdRotateHandler = [[FacebookRotateHandler alloc]
-                                    initWithPlacementID:@"157282864658028_232569667129347"
-                                    adSize:kFBAdSizeHeight50Banner
+                                    initWithPlacementID:@""　//facebookのplacementIDを設定します。
+                                    adSize:kFBAdSize320x50
                                     rootViewController:self];
     mediationView.delegate = self;
     mediationView.rotateHandler = self.facebookAdRotateHandler;

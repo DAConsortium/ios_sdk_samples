@@ -18,19 +18,23 @@
 
 @implementation ViewController
 
-NSInteger const placementID = 18859; //mediationのplacementIDを設定します。
+NSInteger const placementID = 32205; //mediationのplacementIDを設定します。
 NSString *const facebookID = @""; //facebookのplacementIDを設定します。
 
 - (void)viewDidLoad {
    [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    DASMediationView *mediationView = [[DASMediationView alloc] initWithFrame:CGRectMake(0.f, 20.f, self.view.bounds.size.width, 50.f) placementID:placementID];
+    DASMediationView *mediationView = [[DASMediationView alloc] initWithFrame:CGRectMake(0.f, 20.f, 320.f, 50.f) placementID:placementID];
 
     self.facebookAdRotateHandler = [[FacebookRotateHandler alloc]
                                     initWithPlacementID:facebookID
-                                    adSize:kFBAdSizeHeight50Banner
+                                    adSize:kFBAdSize320x50
                                     rootViewController:self];
+    
+    NSArray *TestDevices = @[@""];
+    [FBAdSettings addTestDevices:TestDevices];
+    
     mediationView.delegate = self;
     mediationView.rotateHandler = self.facebookAdRotateHandler;
     [self.view addSubview:mediationView];
