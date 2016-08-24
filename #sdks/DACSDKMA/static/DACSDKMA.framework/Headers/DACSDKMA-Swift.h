@@ -95,6 +95,7 @@ typedef int swift_int4  __attribute__((__ext_vector_type__(4)));
 @import ObjectiveC;
 @import Foundation;
 @import CoreGraphics;
+@import SystemConfiguration;
 #endif
 
 #pragma clang diagnostic ignored "-Wproperty-attribute-mismatch"
@@ -109,7 +110,7 @@ SWIFT_CLASS("_TtC8DACSDKMA8DACSDKMA")
 
 
 
-/// VMAP/AdBreak用プロトコル。
+/// VMAP AdBreak用プロトコル。
 SWIFT_PROTOCOL("_TtP8DACSDKMA23DACSDKMAContentPlayhead_")
 @protocol DACSDKMAContentPlayhead
 
@@ -128,22 +129,22 @@ SWIFT_CLASS("_TtC8DACSDKMA31DACSDKMAAVPlayerContentPlayhead")
 @interface DACSDKMAAVPlayerContentPlayhead : NSObject <DACSDKMAContentPlayhead>
 
 /// コンテンツ・プレイヤー.
-@property (nonatomic, readonly, weak) AVPlayer * _Nullable player;
+@property (nonatomic, strong) AVPlayer * _Nonnull player;
 @property (nonatomic, readonly) NSTimeInterval currentTime;
 @property (nonatomic, readonly) NSTimeInterval duration;
 - (nonnull instancetype)initWithAVPlayer:(AVPlayer * _Nonnull)player OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class DACSDKMACompanionSlot;
 @class UIView;
+@class DACSDKMACompanionSlot;
 
 
 /// 広告枠クラス
 SWIFT_CLASS("_TtC8DACSDKMA19DACSDKMAAdContainer")
 @interface DACSDKMAAdContainer : NSObject
 
-/// 動画広告を追加する枠のビュー。(readonly) このビューのサイズと同じ大きさで表示されます。
-@property (nonatomic, readonly, weak) UIView * _Nullable view;
+/// 動画広告を追加するビュー。(readonly) このビューのサイズを同じ大きさで表示されます。
+@property (nonatomic, readonly, strong) UIView * _Nonnull view;
 
 /// コンパニオン枠コンテナ。(readonly)
 @property (nonatomic, readonly, copy) NSArray<DACSDKMACompanionSlot *> * _Nullable companionSlots;
@@ -233,20 +234,13 @@ typedef SWIFT_ENUM(NSInteger, DACSDKMAAdErrorCode) {
 /// ネットワークが切断されている。
   DACSDKMAAdErrorCodeNetworkNotReachable = 100000,
 
-/// 無効なパラメータを受け取った。
+/// 無効なパラメータを受け取った
   DACSDKMAAdErrorCodeInvalidParameter = 100001,
-
-/// データリクエストに失敗した。
   DACSDKMAAdErrorCodeDataRequestFailed = 100002,
 
 /// MediaFileURLが一つも存在しなかった。
   DACSDKMAAdErrorCodeNoMediaFileURL = 100003,
-
-/// iOSのバージョンが古い。
   DACSDKMAAdErrorCodeUnsupportedIOSVersion = 100004,
-
-/// 動画広告枠が存在しない。
-  DACSDKMAAdErrorCodeNoAdContainerView = 100005,
 };
 
 
@@ -509,9 +503,6 @@ SWIFT_CLASS("_TtC8DACSDKMA18DACSDKMAAdsManager")
 
 /// 現在表示中、もしくは次に表示される動画広告の残数
 @property (nonatomic, readonly) NSInteger remainingAdsCount;
-
-/// 現在表示中、もしくは次に表示される動画広告のインデックス
-@property (nonatomic, readonly) NSInteger currentAdIndex;
 @property (nonatomic, readonly, strong) DACSDKMASettings * _Nonnull settings;
 
 /// 広告データの読み込み
@@ -551,7 +542,7 @@ SWIFT_CLASS("_TtC8DACSDKMA18DACSDKMAAdsManager")
 /// \param enable trueの場合は静音、falseの場合は元に戻します。
 - (void)mute:(BOOL)enable;
 
-/// AdBreakが再生中の場合、それを停止し、広告枠を閉じ、デリゲートにコンテンツの再開を通知をします。 AdBreakが再生前に呼び出した場合、動画広告の再生はキャンセルされます。コンテンツの再開は通知されません。
+/// AdBreakが再生中の場合、それを停止しデリゲートにコンテンツの再開を通知をします。 それ以外の場合、無視されます。
 - (void)discardAdBreak;
 @end
 
@@ -590,7 +581,6 @@ SWIFT_CLASS("_TtC8DACSDKMA18DACSDKMAAdsRequest")
 /// 広告リクエストURL。(readonly)
 @property (nonatomic, readonly, copy) NSString * _Nonnull adTagURI;
 
-/// VMAP/AdBreak用コンテンツ情報 (readonly)
 @property (nonatomic, readonly, strong) id <DACSDKMAContentPlayhead> _Nullable contentPlayhead;
 
 /// 初期化
@@ -636,6 +626,25 @@ typedef SWIFT_ENUM(NSInteger, DACSDKMAInViewStates) {
 /// 不明
   DACSDKMAInViewStatesUnknown = 4,
 };
+
+@class NSNotificationCenter;
+
+SWIFT_CLASS("_TtC8DACSDKMA20DACSDKMAReachability")
+@interface DACSDKMAReachability : NSObject
+@property (nonatomic, copy) void (^ _Nullable whenReachable)(DACSDKMAReachability * _Nonnull);
+@property (nonatomic, copy) void (^ _Nullable whenUnreachable)(DACSDKMAReachability * _Nonnull);
+@property (nonatomic) BOOL reachableOnWWAN;
+@property (nonatomic, strong) NSNotificationCenter * _Nonnull notificationCenter;
+@property (nonatomic, readonly, copy) NSString * _Nonnull currentReachabilityString;
+- (nonnull instancetype)initWithReachabilityRef:(SCNetworkReachabilityRef _Nonnull)reachabilityRef OBJC_DESIGNATED_INITIALIZER;
+- (nullable instancetype)initWithHostname:(NSString * _Nonnull)hostname error:(NSError * _Nullable * _Null_unspecified)error;
+- (BOOL)startNotifierAndReturnError:(NSError * _Nullable * _Null_unspecified)error;
+- (void)stopNotifier;
+- (BOOL)isReachable;
+- (BOOL)isReachableViaWWAN;
+- (BOOL)isReachableViaWiFi;
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+@end
 
 
 

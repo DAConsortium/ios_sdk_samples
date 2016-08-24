@@ -2,7 +2,7 @@
 //  DACSDKMASmartVisionAdPlayer.swift
 //  DACSDKMA
 //
-//  Copyright © 2016 D.A.Consortium Inc. All rights reserved.
+//  Copyright (c) 2015 D.A.Consortium Inc. All rights reserved.
 //
 
 import UIKit
@@ -293,6 +293,8 @@ public class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DAC
         
         defer {
             if result {
+                // フルスクリーンの場合、デフォルトサイズに変更する。
+                adsManager.fullscreen(false)
                 adsManager.stop()
                 self.adVideoControlsView?.playbackStatus = DACSDKMAAdVideoPlaybackStates.Stopped
             }
@@ -343,7 +345,7 @@ public class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DAC
         if adsManager.isFullscreen { return }
         
         // コンパニオンの表示
-        self.companionSlotAtStop.slot.frame = self.adVideoContainer.view?.bounds ?? CGRectZero
+        self.companionSlotAtStop.slot.frame = self.adVideoContainer.view.bounds
         self.companionSlotAtStop.companion?.frame = adsManager.videoRect
         self.bringSubviewToFront(self.companionSlotAtStop.slot)
         
@@ -399,19 +401,14 @@ public class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DAC
         // 表示済みの場合は何もしない。
         if nil != self.adVideoControlsView as? DACSDKMASmartVisionAdPlayerControlsViewForInline { return }
         
-        guard let adsManager: DACSDKMAAdsManager = self.adsManager else { return }
-        guard let adVideoContainerView: UIView = self.adVideoContainer.view else {
-            // 枠が無い場合は削除して、終了。
-            self.clean()
-            return
-        }
+        guard let adsManager = self.adsManager else { return }
         
         // インライン用ビューコントローラーの生成
-        let controslView: DACSDKMASmartVisionAdPlayerControlsViewForInline = DACSDKMASmartVisionAdPlayerControlsViewForInline(frame: adVideoContainerView.bounds)
+        let controslView: DACSDKMASmartVisionAdPlayerControlsViewForInline = DACSDKMASmartVisionAdPlayerControlsViewForInline(frame: self.adVideoContainer.view.bounds)
         controslView.isMute = adsManager.isMute
         controslView.playbackStatus = adsManager.playbackStatus
         controslView.delegate = self
-        adVideoContainerView.addSubview(controslView)
+        self.adVideoContainer.view.addSubview(controslView)
         
         if nil == self.companionSlotFor1By1.companion {
             controslView.enterFullscreenButton.hidden = false
@@ -428,12 +425,13 @@ public class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DAC
             // 該当するコンパニオンが無い場合は、表示しない。
         }
         else {
-            // self.adVideoContainer.view?.frameを変更するために、AutoLayoutを一旦無効にする。
+            // self.adVideoContainer.view.frameを変更するために、AutoLayoutを一旦無効にする。
             dacsdkmaDeactivateConstraints(self.layoutConstraints, view: self)
-            adVideoContainerView.translatesAutoresizingMaskIntoConstraints = true
-            adVideoContainerView.frame = self.bounds
-            // AutoLayoutを有効にする。            
-            adVideoContainerView.translatesAutoresizingMaskIntoConstraints = false
+            self.adVideoContainer.view.translatesAutoresizingMaskIntoConstraints = true
+
+            // AutoLayoutを有効にする。
+            self.adVideoContainer.view.frame = self.bounds
+            self.adVideoContainer.view.translatesAutoresizingMaskIntoConstraints = false
             
             self.companionSlotAtBottom.slot.frame.size = CGSizeMake(self.companionSlotAtBottom.size.width / DACSDKMASmartVisionAdPlayer.companionImageScale, self.companionSlotAtBottom.size.height / DACSDKMASmartVisionAdPlayer.companionImageScale)
             self.companionSlotAtBottom.slot.backgroundColor = self.backgroundColor
@@ -448,7 +446,7 @@ public class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DAC
                 self.addSubview(spacerRight)
                 
                 let views: [String: UIView] = [
-                    "adVideoContainer": adVideoContainerView,
+                    "adVideoContainer": self.adVideoContainer.view,
                     "companionSlotAtBottom": self.companionSlotAtBottom.slot,
                     "sl": spacerLeft,
                     "sr": spacerRight
@@ -482,7 +480,7 @@ public class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DAC
         }
         
         // レイアウトの更新を行う。
-        adVideoContainerView.layoutIfNeeded()
+        self.adVideoContainer.view.layoutIfNeeded()
         controslView.playerView.frame = adsManager.videoRect
     }
     
@@ -494,11 +492,7 @@ public class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DAC
         if nil != self.adVideoControlsView as? DACSDKMASmartVisionAdPlayerControlsViewForFullscreen { return }
         
         guard let adsManager: DACSDKMAAdsManager = self.adsManager else { return }
-        guard let fullscreenView: UIView = adsManager.fullscreenView else {
-            // 枠が無い場合は削除して、終了。
-            self.clean()
-            return
-        }
+        guard let fullscreenView: UIView = adsManager.fullscreenView else { return }
         
         // フルスクリーン用ビューコントローラーの生成
         let controslView: DACSDKMASmartVisionAdPlayerControlsViewForFullscreen = DACSDKMASmartVisionAdPlayerControlsViewForFullscreen(frame: fullscreenView.bounds)
@@ -510,7 +504,7 @@ public class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DAC
         self.adVideoControlsView = controslView
         
         // レイアウトの更新を行う。
-        fullscreenView.layoutIfNeeded()
+        self.adVideoContainer.view.layoutIfNeeded()
         controslView.playerView.frame = adsManager.videoRect
     }
     
@@ -527,7 +521,7 @@ public class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DAC
         self.adVideoControlsView = nil
         
         // AutoresizingMask有効
-        self.adVideoContainer.view?.translatesAutoresizingMaskIntoConstraints = true
+        self.adVideoContainer.view.translatesAutoresizingMaskIntoConstraints = true
     }
     
     // --------------------------------------------------
@@ -654,11 +648,8 @@ public class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DAC
             }
             break
         case DACSDKMAAdEventType.DidStop:
-            // フルスクリーンの場合、デフォルトサイズに変更する。
-            self.adsManager?.fullscreen(false)
-            
             self.adVideoControlsView?.playbackStatus = DACSDKMAAdVideoPlaybackStates.Stopped
-            self.showCompanionAtStop()
+            self.updateCompanionAtStop()
             break
         default:
             break

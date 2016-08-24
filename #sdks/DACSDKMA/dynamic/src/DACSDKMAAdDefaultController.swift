@@ -2,7 +2,7 @@
 //  DACSDKMAAdDefaultPlayer.swift
 //  DACSDKMA
 //
-//  Copyright © 2016 D.A.Consortium Inc. All rights reserved.
+//  Copyright (c) 2015 D.A.Consortium Inc. All rights reserved.
 //
 
 import UIKit
@@ -85,21 +85,15 @@ public class DACSDKMAAdDefaultController: NSObject, DACSDKMAAdControlsViewDelega
             adControlsViewForFullscreen.removeFromSuperview()
         }
         
-        guard let adContainerView: UIView = self.adsManager.adContainer.view else {
-            // 枠が無い場合は削除して、終了。
-            self.clean()
-            return
-        }
-        
         // インライン用ビューコントローラーの生成
-        let adControlsView: DACSDKMAAdDefaultControlsViewForInline = DACSDKMAAdDefaultControlsViewForInline(frame: adContainerView.bounds)
+        let adControlsView: DACSDKMAAdDefaultControlsViewForInline = DACSDKMAAdDefaultControlsViewForInline(frame: self.adsManager.adContainer.view.bounds)
         adControlsView.delegate = self
         adControlsView.isMute = self.adsManager.isMute
         adControlsView.playbackStatus = self.adsManager.playbackStatus
         adControlsView.playerView.frame = self.adsManager.videoRect
         adControlsView.skipButton.hidden = !self.adsManager.skippable()
-        adContainerView.addSubview(adControlsView)
-        adContainerView.bringSubviewToFront(adControlsView)
+        self.adsManager.adContainer.view.addSubview(adControlsView)
+        self.adsManager.adContainer.view.bringSubviewToFront(adControlsView)
         
         self.adControlsView = adControlsView
     }
@@ -114,12 +108,8 @@ public class DACSDKMAAdDefaultController: NSObject, DACSDKMAAdControlsViewDelega
             adControlsViewForInline.removeFromSuperview()
         }
 
-        guard let fullscreenView: UIView = self.adsManager.fullscreenView else {
-            // 枠が無い場合は削除して、終了。
-            self.clean()
-            return
-        }
-
+        guard let fullscreenView = self.adsManager.fullscreenView else { return }
+        
         // フルスクリーン用ビューコントローラーの生成
         let adControlsView: DACSDKMAAdDefaultControlsViewForFullscreen = DACSDKMAAdDefaultControlsViewForFullscreen(frame: fullscreenView.bounds)
         adControlsView.delegate = self
@@ -214,7 +204,7 @@ public class DACSDKMAAdDefaultController: NSObject, DACSDKMAAdControlsViewDelega
             case "progressTime":
                 // 広告の再生時間が変更した。
                 let remainingTimeStr = String(format: "%2d:%.2d", Int((adsManager.durationTime - adsManager.progressTime) / 60), Int((adsManager.durationTime - adsManager.progressTime) % 60))
-                self.adControlsView?.adInfoLabel.text = "Ad \(self.adsManager.currentAdIndex + 1) of \(self.adsManager.totalAdsCount) (\(remainingTimeStr))"
+                self.adControlsView?.adInfoLabel.text = "Ad \(self.adsManager.remainingAdsCount) of \(self.adsManager.totalAdsCount) (\(remainingTimeStr))"
                 break
             case "skipRemainingTime":
                 // スキップの残り時間が変更した。
