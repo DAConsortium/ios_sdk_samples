@@ -1,6 +1,6 @@
 ## DAC Ads SDK
 
-Version 1.2
+Version 1.2.1
 
 ### Overview
 

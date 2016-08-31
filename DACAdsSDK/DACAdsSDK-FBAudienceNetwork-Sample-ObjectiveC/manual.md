@@ -59,7 +59,7 @@ $ pod install
 - "ViewController"に次の変数を追加します。
 
 ```ViewController.m
-const NSInteger placementID = 1; //mediationのplacementIDを設定します。
+const NSInteger placementID = 32205; //mediationのplacementIDを設定します。
 ```
 
 - 適当なタイミングで広告をリクエストします。
