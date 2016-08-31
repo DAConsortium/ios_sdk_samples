@@ -9,6 +9,7 @@ xcuserdata/
 
 Podfile.lock
 Pods/
+Podfile
 
 # Removes Pod WorkSpace
 DACAdsSDK/DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC/DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC.xcworkspace

@@ -15,12 +15,25 @@
 また、今回の手順ではプリロールかつ自動再生のみ流すことが可能です。
 
 ### Step 1: CocoaPodsを利用してBrightcove-Player-SDKをインストールします。
-本サンプル（Brightcove-Sample-ObjC.xcodeproj）があるフォルダで以下のコマンドを実行して、Brightcove-Player-SDKをインストールします。 
+本サンプル（DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC.xcodeproj）があるフォルダで以下のコマンドを実行しPodfileを作成します。
+
+```
+$ pod init
+```
+
+作成されたPodfileで、使用するTargetの下に以下の文を加筆してください。
+
+```Podfile
+pod 'Brightcove-Player-SDK'
+```
+
+その後、pod installをしてBrightcove-Player-SDKをプロジェクトに追加してください。
 
 ```
 $ pod install
 ```
 
+その後、workspaceがプロジェクトとなります。
 
 ### Step 2: XcodeプロジェクトにSDKを追加します
 Xcode Projectを開きます。  

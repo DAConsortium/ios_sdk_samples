@@ -42,6 +42,8 @@
  */
 - (instancetype)initWithFrame:(CGRect)frame placementID:(NSUInteger)placementID;
 - (void)sendRequestParams:(NSString *)event;
+- (void)didFacebookAdError;
+- (void)didClickedFacebookAd;
 
 @end
 
@@ -104,6 +106,11 @@
 @protocol DASMediationRotateHandler <NSObject>
 
 @optional
-- (BOOL)DACMediationViewWillRotation:(DASMediationView *)mediationView;
+
+- (void) willPreLoadFacebookAd: (DASMediationView *)mediationView;
+
+- (void) didDispatchedFacebookAd: (DASMediationView *)mediationView;
+
+- (void) didCompletedFacebookAd: (DASMediationView *)mediationView;
 
 @end

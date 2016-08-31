@@ -17,6 +17,7 @@ DAC Ads SDKはバナー広告をアプリ内に表示するSDKです。
 Sample内、manual.mdをご参照ください。
 
 ### History
+- version 1.2.1 : 2016/08/31 : Facebookからエラーが帰ってきた際に自動で次の広告にスキップする機能の追加。
 - Version 1.2.0 : 2016/06/28 : FacebookAudienceNetworkSDKとの連携機能を追加。
 - Version 1.1.0 : 2015/02/17 : ネイティブ広告フォーマット追加。
 - Version 1.0.0 : 2014/07/01 : リリース開始。

@@ -21,11 +21,25 @@ Xcode Projectを開きます。
 
 ### Step 2 :FacebookAudienceNetworkSDKをプロジェクトに追加します。
 
-本サンプル（DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC.xcodeproj）があるフォルダで以下のコマンドを実行して、FacebookAudienceNetworkSDKをインストールします。 
+本サンプル（DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC.xcodeproj）があるフォルダで以下のコマンドを実行しPodfileを作成します。
+
+```
+$ pod init
+```
+
+作成されたPodfileで、使用するTargetの下に以下の文を加筆してください。
+
+```Podfile
+pod 'FBAudienceNetwork'
+```
+
+その後、pod installをしてFacebookAudienceNetworkSDKをプロジェクトに追加してください。
 
 ```
 $ pod install
 ```
+
+作成されたworkspaceがプロジェクトとなります。
 
 ### Step 3 :FacebookRotateHandlerを追加します。
 プロジェクトにDACAdsSDKとFacebookSDKを連携させるためのFacebookRotateHandlerを追加します。

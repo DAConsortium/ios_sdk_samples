@@ -18,19 +18,17 @@
 
 @implementation FacebookRotateHandler
 {
-  BOOL facebookAdWillContinue;
+  BOOL _facebookAdWillContinue;
 }
-
-static NSString *const kFacebookAdTagString = @"<!-- facebook -->";
 
 - (instancetype) init {
     self = [self initWithPlacementID:@"" adSize: kFBAdSize320x50 rootViewController: nil];
     if (self) {
     }
-    facebookAdWillContinue = NO;
     return nil;
 }
 
+//facebookの広告の設定の初期化
 - (instancetype)initWithPlacementID:(NSString *)placementID
                              adSize:(FBAdSize)adSize
                  rootViewController:(nullable UIViewController *)viewController
@@ -41,58 +39,66 @@ static NSString *const kFacebookAdTagString = @"<!-- facebook -->";
         self.adSize = adSize;
         self.viewController = viewController;
     }
-    facebookAdWillContinue = NO;
     return self;
 }
 
-- (BOOL)DACMediationViewWillRotation: (DASMediationView *)mediationView
+//次の広告がfacebookだった際に、facebook広告のビューを作成する
+- (void) willPreLoadFacebookAd: (DASMediationView *)mediationView
 {
-    self.mediationView = mediationView;
+    if(!_facebookAdWillContinue){
+     self.mediationView = mediationView;
     
-    if ([self.mediationView.adTag rangeOfString:kFacebookAdTagString].location != NSNotFound) {
-        if (!facebookAdWillContinue){
-        [self createFacebookAd];
-        }
-        return false;
-    } else {
-        self.mediationView.hidden = NO;
-        [self removeFacebookAd];
-        return true;
+     self.adView = [[FBAdView alloc] initWithPlacementID:_placementID
+                                                  adSize:_adSize
+                                     rootViewController:_viewController];
+     self.adView.delegate = self;
+     [self.adView loadAd];
+     self.adView.frame = self.mediationView.frame;
+     self.adView.hidden = YES;
+     [self.viewController.view addSubview:self.adView];
     }
-    
-    return true;
 }
 
-- (void)createFacebookAd
+//facebook広告を表示する
+- (void) didDispatchedFacebookAd: (DASMediationView *)mediationView
 {
-    facebookAdWillContinue = YES;
-    self.adView = [[FBAdView alloc] initWithPlacementID:_placementID
-                                             adSize:_adSize
-                                 rootViewController:_viewController];
-    self.adView.delegate = self;
-    [self.adView loadAd];
-    self.adView.frame = self.mediationView.frame;
-    [self.viewController.view addSubview:self.adView];
+    self.adView.hidden = NO;
+    _facebookAdWillContinue = YES;
 }
 
-- (void)removeFacebookAd
+//facebook広告から切り替わる際にビューを破棄する
+- (void) didCompletedFacebookAd: (DASMediationView *)mediationView
 {
-    facebookAdWillContinue = NO;
-     self.adView.delegate = nil;
+    self.adView.delegate = nil;
     [self.adView removeFromSuperview];
     self.adView = nil;
+    _facebookAdWillContinue = NO;
 }
 
+//facebook広告が読まれた際に呼ばれる
 - (void)adViewDidLoad:_adView
-{    
-    self.mediationView.hidden = YES;
+{
+    //とくになし
 }
 
+//facebook広告がタップされた際に呼ばれる
 - (void)adViewDidClick:_adView
 {
     //Clickの実績イベントを発行
-    
     [self.mediationView sendRequestParams:(@"Click")];
+
+    //メディエーションのローテーションを停止する処理の実行
+    [self.mediationView didClickedFacebookAd];
+}
+- (void)adView:(FBAdView *)adView didFailWithError:(NSError *)error {
+    
+    //メディエーションにエラーを通知する処理
+    [self.mediationView didFacebookAdError];
+    
+    //ビューを破棄する
+    self.adView.delegate = nil;
+    [self.adView removeFromSuperview];
+    self.adView = nil;
 }
 
 @end

@@ -10,8 +10,7 @@
 #import "DASMediationView.h"
 
 
-@interface FacebookRotateHandler : NSObject <DASMediationRotateHandler,FBAdViewDelegate>
-
+@interface FacebookRotateHandler : NSObject <DASMediationRotateHandler, FBAdViewDelegate>
 
 - (nullable instancetype)initWithPlacementID:(nonnull NSString *)placementID
                                       adSize:(FBAdSize)adSize
