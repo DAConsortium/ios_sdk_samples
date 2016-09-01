@@ -42,8 +42,8 @@
  */
 - (instancetype)initWithFrame:(CGRect)frame placementID:(NSUInteger)placementID;
 - (void)sendRequestParams:(NSString *)event;
-- (void)didFacebookAdError;
-- (void)didClickedFacebookAd;
+- (void)skipFbAd;
+- (void)clickFbAd;
 
 @end
 
@@ -61,37 +61,37 @@
  * メディエーションビューが表示される直前に呼ばれます。
  * @param mediationView
  */
-- (void)DACMediationViewWillAppear:(DASMediationView *)mediationView;
+- (void)dacMediationViewWillAppear:(DASMediationView *)mediationView;
 
 /*!
  * メディエーションビューが表示された直後に呼ばれます。
  * @param mediationView
  */
-- (void)DACMediationViewDidAppear:(DASMediationView *)mediationView;
+- (void)dacMediationViewDidAppear:(DASMediationView *)mediationView;
 
 /*!
  * メディエーションビューが非表示になる直前に呼ばれます。
  * @param mediationView
  */
-- (void)DACMediationViewWillDisappear:(DASMediationView *)mediationView;
+- (void)dacMediationViewWillDisappear:(DASMediationView *)mediationView;
 
 /*!
  * メディエーションビューが非表示になった直後に呼ばれます。
  * @param mediationView
  */
-- (void)DACMediationViewDidDisappear:(DASMediationView *)mediationView;
+- (void)dacMediationViewDidDisappear:(DASMediationView *)mediationView;
 
 /*!
  * メディエーションビュー内に広告がロードされたタイミングで呼ばれます。
  * @param mediationView
  */
-- (void)DACMediationViewDidLoadAd:(DASMediationView *)mediationView;
+- (void)dacMediationViewDidLoadAd:(DASMediationView *)mediationView;
 
 /*!
  * メディエーションビュー内の広告がタップされたタイミングで呼ばれます。
  * @param mediationView
  */
-- (void)DACMediationViewDidClicked:(DASMediationView *)mediationView;
+- (void)dacMediationViewDidClicked:(DASMediationView *)mediationView;
 
 /*!
  * メディエーションビュー内でエラーが発生したタイミングで呼ばれます。
@@ -99,7 +99,7 @@
  * @param mediationView
  * @param error         NSError
  */
-- (void)DACMediationView:(DASMediationView *)mediationView didFailLoadWithError:(NSError *)error;
+- (void)dacMediationView:(DASMediationView *)mediationView didFailLoadWithError:(NSError *)error;
 
 @end
 

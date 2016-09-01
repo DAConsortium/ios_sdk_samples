@@ -82,43 +82,43 @@ const NSInteger placementID = 32205; //mediationのplacementIDを設定します
 @interface ViewController () <DASMediationViewDelegate>
 
 //メディエーションビューが表示される直前に呼ばれます。
-- (void)DACMediationViewWillAppear:(DASMediationView *)mediationView
+- (void)dacMediationViewWillAppear:(DASMediationView *)mediationView
 {
     NSLog(@"%s: placementID: %td", __PRETTY_FUNCTION__, mediationView.placementID);
 }
 
 //メディエーションビューが表示された直後に呼ばれます。
-- (void)DACMediationViewDidAppear:(DASMediationView *)mediationView
+- (void)dacMediationViewDidAppear:(DASMediationView *)mediationView
 {
     NSLog(@"%s: placementID: %td", __PRETTY_FUNCTION__, mediationView.placementID);
 }
 
 //メディエーションビューが非表示になる直前に呼ばれます。
-- (void)DACMediationViewWillDisappear:(DASMediationView *)mediationView
+- (void)dacMediationViewWillDisappear:(DASMediationView *)mediationView
 {
     NSLog(@"%s: placementID: %td", __PRETTY_FUNCTION__, mediationView.placementID);
 }
 
 //メディエーションビューが非表示になった直後に呼ばれます。
-- (void)DACMediationViewDidDisappear:(DASMediationView *)mediationView
+- (void)dacMediationViewDidDisappear:(DASMediationView *)mediationView
 {
     NSLog(@"%s: placementID: %td", __PRETTY_FUNCTION__, mediationView.placementID);
 }
 
 //メディエーションビュー内に広告がロードされたタイミングで呼ばれます。
-- (void)DACMediationViewDidClicked:(DASMediationView *)mediationView
+- (void)dacMediationViewDidClicked:(DASMediationView *)mediationView
 {
     NSLog(@"%s: placementID: %td", __PRETTY_FUNCTION__, mediationView.placementID);
 }
 
 //メディエーションビュー内の広告がタップされたタイミングで呼ばれます。
-- (void)DACMediationViewDidLoadAd:(DASMediationView *)mediationView
+- (void)dacMediationViewDidLoadAd:(DASMediationView *)mediationView
 {
     NSLog(@"%s: placementID: %td", __PRETTY_FUNCTION__, mediationView.placementID);
 }
 
 //メディエーションビュー内でエラーが発生したタイミングで呼ばれます。
-- (void)DACMediationView:(DASMediationView *)mediationView didFailLoadWithError:(NSError *)error
+- (void)dacMediationView:(DASMediationView *)mediationView didFailLoadWithError:(NSError *)error
 {
     switch (error.code) {
         case DASErrorCodeTagDataNotFound:

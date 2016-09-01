@@ -28,7 +28,7 @@
     return nil;
 }
 
-//facebookの広告の設定の初期化
+// facebookの広告の設定の初期化
 - (instancetype)initWithPlacementID:(NSString *)placementID
                              adSize:(FBAdSize)adSize
                  rootViewController:(nullable UIViewController *)viewController
@@ -42,14 +42,14 @@
     return self;
 }
 
-//次の広告がfacebookだった際に、facebook広告のビューを作成する
+// 次の広告がfacebookだった際に、facebook広告のビューを作成する
 - (void) willPreLoadFacebookAd: (DASMediationView *)mediationView
 {
     if(!_facebookAdWillContinue){
      self.mediationView = mediationView;
     
      self.adView = [[FBAdView alloc] initWithPlacementID:_placementID
-                                                  adSize:_adSize
+                                                  adSize:self.adSize
                                      rootViewController:_viewController];
      self.adView.delegate = self;
      [self.adView loadAd];
@@ -59,7 +59,7 @@
     }
 }
 
-//facebook広告を表示する
+// facebook広告を表示する
 - (void) didDispatchedFacebookAd: (DASMediationView *)mediationView
 {
     self.adView.hidden = NO;
@@ -75,30 +75,30 @@
     _facebookAdWillContinue = NO;
 }
 
-//facebook広告が読まれた際に呼ばれる
-- (void)adViewDidLoad:_adView
+// facebook広告が読まれた際に呼ばれる
+- (void)adViewDidLoad:adView
 {
-    //とくになし
+    // とくになし
 }
 
-//facebook広告がタップされた際に呼ばれる
-- (void)adViewDidClick:_adView
+// facebook広告がタップされた際に呼ばれる
+- (void)adViewDidClick:adView
 {
     //Clickの実績イベントを発行
     [self.mediationView sendRequestParams:(@"Click")];
 
-    //メディエーションのローテーションを停止する処理の実行
-    [self.mediationView didClickedFacebookAd];
+    // メディエーションのローテーションを停止する処理の実行
+    [self.mediationView clickFbAd];
 }
 - (void)adView:(FBAdView *)adView didFailWithError:(NSError *)error {
     
-    //メディエーションにエラーを通知する処理
-    [self.mediationView didFacebookAdError];
-    
-    //ビューを破棄する
+    // ビューを破棄する
     self.adView.delegate = nil;
     [self.adView removeFromSuperview];
     self.adView = nil;
+    
+    // メディエーションにエラーを通知する処理
+    [self.mediationView skipFbAd];
 }
 
 @end
