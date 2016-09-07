@@ -1,6 +1,6 @@
 ## DAC Multimedia Ads SDK
 
-Version 1.1.2
+Version 1.3
 
 ### Overview
 
@@ -38,8 +38,13 @@ Examples of the UnSupported
 manual.mdをご参照ください。
 また同封の SamplePlayer-Swift は動画プレーヤーアプリにPreroll広告を出す例となっております。
 
+### Caution
+
+version1.3.0からSDK内で使用する広告枠のView、コンテンツプレーヤーのView、コンパニオン広告のViewがweakプロパティに変更されましたのでご注意お願いいたします。
+
 
 ### History
+- Version 1.3.0 : 2016/09/7 : 動画再生中に帯域不足等が通知された場合にリカバリーする機能の追加。
 - Version 1.1.2 : 2016/08/24 : マルチインプレッション対応
 - Version 1.1.1 : 2016/05/16 : フリークエンシーコントロール機能の追加。"Pause"と"Resume"のトラッキングを送信するように修正。DidAllAdsCompleteイベントがコンテンツ再開通知後に発火されるように修正。
 - Version 1.0.4 : 2016/05/11 : staticコンパニオンのタップ条件をタッチからタッチアップインサイドに修正。

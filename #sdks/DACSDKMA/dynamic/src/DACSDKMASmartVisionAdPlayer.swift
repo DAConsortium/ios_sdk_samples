@@ -77,13 +77,16 @@ public class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DAC
     
     /// 表示される動画広告のサイズ(readonly)
     public private(set) var adVideoSize: CGSize = CGSizeZero
+
+    /// エラー時にこのViewを削除するか否か。
+    public var autoRemoveFromSuperView: Bool = true
     
     // --------------------------------------------------
     // MARK: private properties
     // --------------------------------------------------
     // ----- 動画広告枠 -----
     /// AutoLayout設定
-    private var layoutConstraints: [NSLayoutConstraint] = [NSLayoutConstraint]()
+    private var layoutConstraints: [NSLayoutConstraint] = []
     
     /// 動画広告コントローラー
     private var adVideoControlsView: DACSDKMAAdVideoControlsView? = nil
@@ -112,6 +115,7 @@ public class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DAC
     // MARK: life cycle
     // --------------------------------------------------
     deinit {
+        self.delegate = nil
         self.clean()
     }
     
@@ -171,8 +175,6 @@ public class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DAC
     public func clean() {
         self.pause()
         
-        self.delegate = nil        
-        
         self.adsManager?.delegate = nil
         self.adsManager?.clean()
         self.adsManager = nil
@@ -181,20 +183,21 @@ public class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DAC
         self.adsLoader = nil
         
         dacsdkmaDeactivateConstraints(self.layoutConstraints, view: self)
-
+        self.layoutConstraints = []
+        
         self.companionAtStopControlsView?.removeFromSuperview()
         self.companionAtStopControlsView = nil
         
         self.adVideoControlsView?.removeFromSuperview()
         self.adVideoControlsView = nil
         
-        self.companionSlotAtStop?.slot.removeFromSuperview()
+        self.companionSlotAtStop?.slot?.removeFromSuperview()
         self.companionSlotAtStop?.companion?.removeFromSuperview()
-        self.companionSlotAtBottom?.slot.removeFromSuperview()
+        self.companionSlotAtBottom?.slot?.removeFromSuperview()
         self.companionSlotAtBottom?.companion?.removeFromSuperview()        
-        self.companionSlotFor1By1?.slot.removeFromSuperview()
+        self.companionSlotFor1By1?.slot?.removeFromSuperview()
         self.companionSlotFor1By1?.companion?.removeFromSuperview()
-        self.companionSlotFor2By2?.slot.removeFromSuperview()
+        self.companionSlotFor2By2?.slot?.removeFromSuperview()
         self.companionSlotFor2By2?.companion?.removeFromSuperview()
         
         self.removeFromSuperview()
@@ -230,7 +233,9 @@ public class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DAC
         }
         
         // 止め画像
-        let companionViewAtStop: UIView = UIView(frame: CGRectMake(0, 0, DACSDKMASmartVisionAdPlayer.companionSizeAtStop.width, DACSDKMASmartVisionAdPlayer.companionSizeAtStop.height))
+        let companionViewAtStop: UIView = UIView(frame: CGRectZero)
+        companionViewAtStop.hidden = true
+        self.addSubview(companionViewAtStop)
         companionViewAtStop.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
         let companionSlotAtStopExcludeFilters: [DACSDKMACompanionSlot.ExcludeFilter] = [excludeFilterFor1By1, excludeFilterFor2By2, { (size: CGSize) in
             // 幅 16: 高さ 9のアスペクト比に近くないものは除外する。
@@ -246,7 +251,9 @@ public class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DAC
         companionSlots.append(companionSlotAtStop)
         
         // 動画下部バナー
-        let companionViewAtBottom: UIView = UIView(frame: CGRectMake(0, 0, DACSDKMASmartVisionAdPlayer.companionSizeAtBottom.width, DACSDKMASmartVisionAdPlayer.companionSizeAtBottom.height))
+        let companionViewAtBottom: UIView = UIView(frame: CGRectZero)
+        companionViewAtBottom.hidden = true
+        self.addSubview(companionViewAtBottom)
         companionViewAtBottom.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
         let companionSlotAtBottomExcludeFilters: [DACSDKMACompanionSlot.ExcludeFilter] = [excludeFilterFor1By1, excludeFilterFor2By2, { (size: CGSize) in
             // 幅 300px: 高さ 82pxのアスペクト比に近くないものは除外する。
@@ -262,6 +269,8 @@ public class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DAC
         
         // 1by1
         let companionViewFor1By1: UIView = UIView(frame: CGRectZero)
+        companionViewFor1By1.hidden = true
+        self.addSubview(companionViewFor1By1)
         let companionSlotFor1By1ExcludeFilters: [DACSDKMACompanionSlot.ExcludeFilter] = [ { (size: CGSize) in
             // 1by1以外を除外する
             return !excludeFilterFor1By1(size: size)
@@ -272,6 +281,8 @@ public class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DAC
         
         // 2by2
         let companionViewFor2By2: UIView = UIView(frame: CGRectZero)
+        companionViewFor2By2.hidden = true
+        self.addSubview(companionViewFor2By2)
         let companionSlotFor2By2ExcludeFilters: [DACSDKMACompanionSlot.ExcludeFilter] = [ { (size: CGSize) in
             // 2by2以外を除外する
             return !excludeFilterFor2By2(size: size)
@@ -293,8 +304,6 @@ public class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DAC
         
         defer {
             if result {
-                // フルスクリーンの場合、デフォルトサイズに変更する。
-                adsManager.fullscreen(false)
                 adsManager.stop()
                 self.adVideoControlsView?.playbackStatus = DACSDKMAAdVideoPlaybackStates.Stopped
             }
@@ -326,7 +335,8 @@ public class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DAC
         self.companionAtStopControlsView?.delegate = nil
         self.companionAtStopControlsView?.removeFromSuperview()
         self.companionAtStopControlsView = nil
-        self.companionSlotAtStop.slot.removeFromSuperview()
+        self.companionSlotAtStop.slot?.frame = CGRectZero
+        self.companionSlotAtStop.slot?.hidden = true
         
         // 動画広告コントローラーを表示
         self.adVideoControlsView?.hidden = false
@@ -337,17 +347,21 @@ public class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DAC
      */
     private func showCompanionAtStop() {
         // コンパニオンが無ければ、何もしない。
-        if nil == self.companionSlotAtStop.companion { return }
-        
-        guard let adsManager: DACSDKMAAdsManager = self.adsManager else { return }
-        
+        guard let companion: UIView = self.companionSlotAtStop.companion else { return }
+
+        // コンパニオンが表示中の場合、何もしない。以降の処理は行わない。
+        guard let slot: UIView = self.companionSlotAtStop.slot else { return }
+        if !slot.hidden { return }
+
         // フルスクリーンの場合、表示しない。以降の処理は行わない。
+        guard let adsManager: DACSDKMAAdsManager = self.adsManager else { return }
         if adsManager.isFullscreen { return }
         
         // コンパニオンの表示
-        self.companionSlotAtStop.slot.frame = self.adVideoContainer.view.bounds
-        self.companionSlotAtStop.companion?.frame = adsManager.videoRect
-        self.bringSubviewToFront(self.companionSlotAtStop.slot)
+        slot.frame = self.adVideoContainer.view?.bounds ?? CGRectZero
+        slot.hidden = false
+        companion.frame = adsManager.videoRect
+        self.bringSubviewToFront(slot)
         
         // 動画広告コントローラーを非表示
         self.adVideoControlsView?.hidden = true
@@ -356,42 +370,14 @@ public class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DAC
         if nil != self.companionAtStopControlsView { return }
         
         // 止め画像表示中は動画は停止する。
-        adsManager.pause()
-        self.adVideoControlsView?.playbackStatus = DACSDKMAAdVideoPlaybackStates.Stopped
-        
-        // 止め画像の表示
-        self.addSubview(self.companionSlotAtStop.slot)
-        
+        adsManager.stop()
+
         // 止め画像コントローラーを表示
-        let companionAtStopControlsView: DACSDKMACompanionAtStopControlsView =  DACSDKMACompanionAtStopControlsView(frame: self.companionSlotAtStop.slot.bounds)
+        let companionAtStopControlsView: DACSDKMACompanionAtStopControlsView =  DACSDKMACompanionAtStopControlsView(frame: slot.bounds)
         companionAtStopControlsView.delegate = self
-        self.companionSlotAtStop.slot.addSubview(companionAtStopControlsView)
+        slot.addSubview(companionAtStopControlsView)
         
         self.companionAtStopControlsView = companionAtStopControlsView
-    }
-    
-    /**
-     止め画像を表示を更新する。
-     */
-    private func updateCompanionAtStop() {
-        guard let playbackStatus: DACSDKMAAdVideoPlaybackStates = self.adsManager?.playbackStatus else { return }
-        switch playbackStatus {
-        case .Playing:
-            self.hideCompanionAtStop()
-            break
-        case .Pausing:
-            if self.stopIfNeeded() {
-                // 止め画像を表示する
-                self.showCompanionAtStop()
-            }
-            break
-        case .Stopped:
-            // 止め画像を表示する
-            self.showCompanionAtStop()
-            break
-        default:
-            break
-        }
     }
     
     /**
@@ -401,14 +387,19 @@ public class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DAC
         // 表示済みの場合は何もしない。
         if nil != self.adVideoControlsView as? DACSDKMASmartVisionAdPlayerControlsViewForInline { return }
         
-        guard let adsManager = self.adsManager else { return }
+        guard let adsManager: DACSDKMAAdsManager = self.adsManager else { return }
+        guard let adVideoContainerView: UIView = self.adVideoContainer.view else {
+            // 枠が無い場合は削除して、終了。
+            self.clean()
+            return
+        }
         
         // インライン用ビューコントローラーの生成
-        let controslView: DACSDKMASmartVisionAdPlayerControlsViewForInline = DACSDKMASmartVisionAdPlayerControlsViewForInline(frame: self.adVideoContainer.view.bounds)
+        let controslView: DACSDKMASmartVisionAdPlayerControlsViewForInline = DACSDKMASmartVisionAdPlayerControlsViewForInline(frame: adVideoContainerView.bounds)
         controslView.isMute = adsManager.isMute
         controslView.playbackStatus = adsManager.playbackStatus
         controslView.delegate = self
-        self.adVideoContainer.view.addSubview(controslView)
+        adVideoContainerView.addSubview(controslView)
         
         if nil == self.companionSlotFor1By1.companion {
             controslView.enterFullscreenButton.hidden = false
@@ -421,22 +412,20 @@ public class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DAC
         self.adVideoControlsView = controslView
         
         // ----- 動画下部バナー -----
-        if nil == self.companionSlotAtBottom.companion {
-            // 該当するコンパニオンが無い場合は、表示しない。
-        }
-        else {
-            // self.adVideoContainer.view.frameを変更するために、AutoLayoutを一旦無効にする。
+        // 該当するコンパニオンが有る場合、それを表示する。
+        if let slot: UIView = self.companionSlotAtBottom.slot where nil != self.companionSlotAtBottom.companion && CGRectIsEmpty(slot.frame) {
+            // self.adVideoContainer.view?.frameを変更するために、AutoLayoutを一旦無効にする。
             dacsdkmaDeactivateConstraints(self.layoutConstraints, view: self)
-            self.adVideoContainer.view.translatesAutoresizingMaskIntoConstraints = true
-
-            // AutoLayoutを有効にする。
-            self.adVideoContainer.view.frame = self.bounds
-            self.adVideoContainer.view.translatesAutoresizingMaskIntoConstraints = false
+            self.layoutConstraints = []
+            adVideoContainerView.translatesAutoresizingMaskIntoConstraints = true
+            adVideoContainerView.frame = self.bounds
+            // AutoLayoutを有効にする。            
+            adVideoContainerView.translatesAutoresizingMaskIntoConstraints = false
             
-            self.companionSlotAtBottom.slot.frame.size = CGSizeMake(self.companionSlotAtBottom.size.width / DACSDKMASmartVisionAdPlayer.companionImageScale, self.companionSlotAtBottom.size.height / DACSDKMASmartVisionAdPlayer.companionImageScale)
-            self.companionSlotAtBottom.slot.backgroundColor = self.backgroundColor
-            self.companionSlotAtBottom.slot.translatesAutoresizingMaskIntoConstraints = false
-            self.addSubview(self.companionSlotAtBottom.slot)
+            slot.frame.size = CGSizeMake(self.companionSlotAtBottom.size.width / DACSDKMASmartVisionAdPlayer.companionImageScale, self.companionSlotAtBottom.size.height / DACSDKMASmartVisionAdPlayer.companionImageScale)
+            slot.hidden = false
+            slot.backgroundColor = self.backgroundColor
+            slot.translatesAutoresizingMaskIntoConstraints = false
             
             if self.layoutConstraints.isEmpty {
                 // 動画枠の下にコンパニオンを表示する。コンパニオンは中央横に配置する。コンパニオンの大きさは固定。
@@ -446,15 +435,15 @@ public class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DAC
                 self.addSubview(spacerRight)
                 
                 let views: [String: UIView] = [
-                    "adVideoContainer": self.adVideoContainer.view,
-                    "companionSlotAtBottom": self.companionSlotAtBottom.slot,
+                    "adVideoContainer": adVideoContainerView,
+                    "companionSlotAtBottom": slot,
                     "sl": spacerLeft,
                     "sr": spacerRight
                 ]
                 
                 let metrics: [String : AnyObject] = [
-                    "companionWidth": self.companionSlotAtBottom.slot.frame.size.width,
-                    "companionHeight": self.companionSlotAtBottom.slot.frame.size.height,
+                    "companionWidth": slot.frame.size.width,
+                    "companionHeight": slot.frame.size.height,
                 ]
                 
                 var layoutConstraints: [NSLayoutConstraint] = [NSLayoutConstraint]()
@@ -480,7 +469,7 @@ public class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DAC
         }
         
         // レイアウトの更新を行う。
-        self.adVideoContainer.view.layoutIfNeeded()
+        adVideoContainerView.layoutIfNeeded()
         controslView.playerView.frame = adsManager.videoRect
     }
     
@@ -492,7 +481,11 @@ public class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DAC
         if nil != self.adVideoControlsView as? DACSDKMASmartVisionAdPlayerControlsViewForFullscreen { return }
         
         guard let adsManager: DACSDKMAAdsManager = self.adsManager else { return }
-        guard let fullscreenView: UIView = adsManager.fullscreenView else { return }
+        guard let fullscreenView: UIView = adsManager.fullscreenView else {
+            // 枠が無い場合は削除して、終了。
+            self.clean()
+            return
+        }
         
         // フルスクリーン用ビューコントローラーの生成
         let controslView: DACSDKMASmartVisionAdPlayerControlsViewForFullscreen = DACSDKMASmartVisionAdPlayerControlsViewForFullscreen(frame: fullscreenView.bounds)
@@ -504,7 +497,7 @@ public class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DAC
         self.adVideoControlsView = controslView
         
         // レイアウトの更新を行う。
-        self.adVideoContainer.view.layoutIfNeeded()
+        fullscreenView.layoutIfNeeded()
         controslView.playerView.frame = adsManager.videoRect
     }
     
@@ -514,6 +507,7 @@ public class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DAC
     private func removeAdControlsView() {
         // AutoLayout解除
         dacsdkmaDeactivateConstraints(self.layoutConstraints, view: self)
+        self.layoutConstraints = []
         
         // ビューコントローラーの破棄
         self.adVideoControlsView?.delegate = nil
@@ -521,7 +515,7 @@ public class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DAC
         self.adVideoControlsView = nil
         
         // AutoresizingMask有効
-        self.adVideoContainer.view.translatesAutoresizingMaskIntoConstraints = true
+        self.adVideoContainer.view?.translatesAutoresizingMaskIntoConstraints = true
     }
     
     // --------------------------------------------------
@@ -597,6 +591,11 @@ public class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DAC
         
         // アプリに通知する。
         self.delegate?.dacSdkMaSmartVisionAdPlayer?(self, DidReceiveAdError: adErrorData.adError)
+
+        // アプリに通知後、解放処理をします。
+        if self.autoRemoveFromSuperView {
+            self.clean()
+        }
     }
     
     public func dacSdkAdsManager(adsManager: DACSDKMAAdsManager, didReceiveAdEvent adEvent: DACSDKMAAdEvent) {
@@ -644,12 +643,15 @@ public class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DAC
             if DACSDKMAAdVideoPlaybackStates.Playing == self.adVideoControlsView?.playbackStatus {
                 // 再生時のみ、ステータス変更をする。停止中から一時停止にはしない。
                 self.adVideoControlsView?.playbackStatus = DACSDKMAAdVideoPlaybackStates.Pausing
-                self.updateCompanionAtStop()
+                self.stopIfNeeded()
             }
             break
         case DACSDKMAAdEventType.DidStop:
+            // フルスクリーンの場合、デフォルトサイズに変更する。
+            self.adsManager?.fullscreen(false)
+            
             self.adVideoControlsView?.playbackStatus = DACSDKMAAdVideoPlaybackStates.Stopped
-            self.updateCompanionAtStop()
+            self.showCompanionAtStop()
             break
         default:
             break
@@ -662,6 +664,11 @@ public class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DAC
     public func dacSdkAdsManager(adsManager: DACSDKMAAdsManager, didReceiveAdError adError: DACSDKMAAdError) {
         // アプリに通知する。
         self.delegate?.dacSdkMaSmartVisionAdPlayer?(self, DidReceiveAdError: adError)
+
+        // アプリに通知後、解放処理をします。
+        if self.autoRemoveFromSuperView {
+            self.clean()
+        }
     }
     
     public func dacSdkAdsManagerDidRequestContentPause(adsManager: DACSDKMAAdsManager) {
@@ -804,6 +811,7 @@ public class DACSDKMASmartVisionAdPlayerControlsViewForInline: DACSDKMAAdVideoCo
         
         if nil == newSuperview {
             dacsdkmaDeactivateConstraints(self.layoutConstraints, view: self)
+            self.layoutConstraints = []
             return
         }
         
@@ -895,6 +903,7 @@ public class DACSDKMASmartVisionAdPlayerControlsViewForFullscreen: DACSDKMAAdVid
         
         if nil == newSuperview {
             dacsdkmaDeactivateConstraints(self.layoutConstraints, view: self)
+            self.layoutConstraints = []
             return
         }
         
@@ -965,6 +974,7 @@ public class DACSDKMACompanionAtStopControlsView: DACSDKMAAdVideoControlsView {
         
         if nil == newSuperview {
             dacsdkmaDeactivateConstraints(self.layoutConstraints, view: self)
+            self.layoutConstraints = []
             return
         }
         
