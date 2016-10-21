@@ -15,7 +15,7 @@
 
 | ファイル名 | Xcode | サポートOS | プログラミング言語 |
 |:--|:--|:--|:--|:--|
-| dynamic/DACSDKPingV.framework | 8.0 | iOS 8.0 以上 | Swift 3 もしくは Objective-C |
+| #sdks/DACSDKPingV.framework | 8.0 | iOS 8.0 以上 | Swift 3 もしくは Objective-C |
 
 ## <div id="概要">概要</div>
 
