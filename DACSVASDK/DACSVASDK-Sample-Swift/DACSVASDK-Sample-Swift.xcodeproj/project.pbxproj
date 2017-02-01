@@ -8,13 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		811E21BE1E416A5500DE8FC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7724C301BCCC37C0045C687 /* AppDelegate.swift */; };
-		81A246DD1E416B040041502C /* DACSDKMA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81A246DC1E416B040041502C /* DACSDKMA.framework */; };
-		81A246E51E416B2E0041502C /* DACSDKMAAdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A246E01E416B2E0041502C /* DACSDKMAAdController.swift */; };
-		81A246E61E416B2E0041502C /* DACSDKMAAdControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A246E11E416B2E0041502C /* DACSDKMAAdControlsView.swift */; };
-		81A246E71E416B2E0041502C /* DACSDKMAAdImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A246E21E416B2E0041502C /* DACSDKMAAdImageGenerator.swift */; };
-		81A246E81E416B2E0041502C /* DACSDKMASmartVisionAdPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A246E31E416B2E0041502C /* DACSDKMASmartVisionAdPlayer.swift */; };
-		81A246E91E416B2E0041502C /* DACSDKMAUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81A246E41E416B2E0041502C /* DACSDKMAUtils.swift */; };
-		81A246EC1E416CF50041502C /* DACSDKMA.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 81A246DC1E416B040041502C /* DACSDKMA.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		817321DB1E4173BC00471245 /* DACSDKMA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 817321D91E4173BC00471245 /* DACSDKMA.framework */; };
+		817321F71E4174A600471245 /* DACSDKMAAdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817321F21E4174A600471245 /* DACSDKMAAdController.swift */; };
+		817321F81E4174A600471245 /* DACSDKMAAdControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817321F31E4174A600471245 /* DACSDKMAAdControlsView.swift */; };
+		817321F91E4174A600471245 /* DACSDKMAAdImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817321F41E4174A600471245 /* DACSDKMAAdImageGenerator.swift */; };
+		817321FA1E4174A600471245 /* DACSDKMASmartVisionAdPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817321F51E4174A600471245 /* DACSDKMASmartVisionAdPlayer.swift */; };
+		817321FB1E4174A600471245 /* DACSDKMAUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817321F61E4174A600471245 /* DACSDKMAUtils.swift */; };
 		F7724C331BCCC37C0045C687 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7724C321BCCC37C0045C687 /* ViewController.swift */; };
 		F7724C361BCCC37C0045C687 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7724C341BCCC37C0045C687 /* Main.storyboard */; };
 		F7724C381BCCC37C0045C687 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7724C371BCCC37C0045C687 /* Assets.xcassets */; };
@@ -28,7 +27,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				81A246EC1E416CF50041502C /* DACSDKMA.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -36,12 +34,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		81A246DC1E416B040041502C /* DACSDKMA.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DACSDKMA.framework; sourceTree = "<group>"; };
-		81A246E01E416B2E0041502C /* DACSDKMAAdController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DACSDKMAAdController.swift; sourceTree = "<group>"; };
-		81A246E11E416B2E0041502C /* DACSDKMAAdControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DACSDKMAAdControlsView.swift; sourceTree = "<group>"; };
-		81A246E21E416B2E0041502C /* DACSDKMAAdImageGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DACSDKMAAdImageGenerator.swift; sourceTree = "<group>"; };
-		81A246E31E416B2E0041502C /* DACSDKMASmartVisionAdPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DACSDKMASmartVisionAdPlayer.swift; sourceTree = "<group>"; };
-		81A246E41E416B2E0041502C /* DACSDKMAUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DACSDKMAUtils.swift; sourceTree = "<group>"; };
+		817321D91E4173BC00471245 /* DACSDKMA.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DACSDKMA.framework; path = "../../#sdks/DACSDKMA/dynamic/DACSDKMA.framework"; sourceTree = "<group>"; };
+		817321F21E4174A600471245 /* DACSDKMAAdController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DACSDKMAAdController.swift; path = "../../#sdks/DACSDKMA/dynamic/src/src/DACSDKMAAdController.swift"; sourceTree = "<group>"; };
+		817321F31E4174A600471245 /* DACSDKMAAdControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DACSDKMAAdControlsView.swift; path = "../../#sdks/DACSDKMA/dynamic/src/src/DACSDKMAAdControlsView.swift"; sourceTree = "<group>"; };
+		817321F41E4174A600471245 /* DACSDKMAAdImageGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DACSDKMAAdImageGenerator.swift; path = "../../#sdks/DACSDKMA/dynamic/src/src/DACSDKMAAdImageGenerator.swift"; sourceTree = "<group>"; };
+		817321F51E4174A600471245 /* DACSDKMASmartVisionAdPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DACSDKMASmartVisionAdPlayer.swift; path = "../../#sdks/DACSDKMA/dynamic/src/src/DACSDKMASmartVisionAdPlayer.swift"; sourceTree = "<group>"; };
+		817321F61E4174A600471245 /* DACSDKMAUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DACSDKMAUtils.swift; path = "../../#sdks/DACSDKMA/dynamic/src/src/DACSDKMAUtils.swift"; sourceTree = "<group>"; };
 		F7724C2D1BCCC37C0045C687 /* DACSVASDK-Sample-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DACSVASDK-Sample-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7724C301BCCC37C0045C687 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7724C321BCCC37C0045C687 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,21 +54,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81A246DD1E416B040041502C /* DACSDKMA.framework in Frameworks */,
+				817321DB1E4173BC00471245 /* DACSDKMA.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		81A246EA1E416B340041502C /* src */ = {
+		817321FC1E4174AA00471245 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				81A246E01E416B2E0041502C /* DACSDKMAAdController.swift */,
-				81A246E11E416B2E0041502C /* DACSDKMAAdControlsView.swift */,
-				81A246E21E416B2E0041502C /* DACSDKMAAdImageGenerator.swift */,
-				81A246E41E416B2E0041502C /* DACSDKMAUtils.swift */,
-				81A246E31E416B2E0041502C /* DACSDKMASmartVisionAdPlayer.swift */,
+				817321F31E4174A600471245 /* DACSDKMAAdControlsView.swift */,
+				817321F41E4174A600471245 /* DACSDKMAAdImageGenerator.swift */,
+				817321F51E4174A600471245 /* DACSDKMASmartVisionAdPlayer.swift */,
+				817321F61E4174A600471245 /* DACSDKMAUtils.swift */,
+				817321F21E4174A600471245 /* DACSDKMAAdController.swift */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -78,8 +76,8 @@
 		F7724C241BCCC37C0045C687 = {
 			isa = PBXGroup;
 			children = (
-				81A246EA1E416B340041502C /* src */,
-				81A246DC1E416B040041502C /* DACSDKMA.framework */,
+				817321FC1E4174AA00471245 /* src */,
+				817321D91E4173BC00471245 /* DACSDKMA.framework */,
 				F7724C2F1BCCC37C0045C687 /* DACSVASDK-Sample-Swift */,
 			);
 			sourceTree = "<group>";
@@ -182,11 +180,11 @@
 			files = (
 				F7724C331BCCC37C0045C687 /* ViewController.swift in Sources */,
 				811E21BE1E416A5500DE8FC7 /* AppDelegate.swift in Sources */,
-				81A246E51E416B2E0041502C /* DACSDKMAAdController.swift in Sources */,
-				81A246E61E416B2E0041502C /* DACSDKMAAdControlsView.swift in Sources */,
-				81A246E71E416B2E0041502C /* DACSDKMAAdImageGenerator.swift in Sources */,
-				81A246E81E416B2E0041502C /* DACSDKMASmartVisionAdPlayer.swift in Sources */,
-				81A246E91E416B2E0041502C /* DACSDKMAUtils.swift in Sources */,
+				817321F71E4174A600471245 /* DACSDKMAAdController.swift in Sources */,
+				817321F81E4174A600471245 /* DACSDKMAAdControlsView.swift in Sources */,
+				817321F91E4174A600471245 /* DACSDKMAAdImageGenerator.swift in Sources */,
+				817321FA1E4174A600471245 /* DACSDKMASmartVisionAdPlayer.swift in Sources */,
+				817321FB1E4174A600471245 /* DACSDKMAUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
