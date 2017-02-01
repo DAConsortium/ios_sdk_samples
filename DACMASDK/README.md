@@ -1,6 +1,6 @@
 ## DAC Multimedia Ads SDK
 
-Version 1.3
+Version 2.0
 
 ### Overview
 
@@ -44,6 +44,7 @@ version1.3.0からSDK内で使用する広告枠のView、コンテンツプレ�
 
 
 ### History
+- Version 2.0.0 : 2017/02/1 : Swift3.0.0対応。縦型動画対応。インタースティシャル対応。
 - Version 1.3.0 : 2016/09/7 : 動画再生中に帯域不足等が通知された場合にリカバリーする機能の追加。
 - Version 1.1.2 : 2016/08/24 : マルチインプレッション対応
 - Version 1.1.1 : 2016/05/16 : フリークエンシーコントロール機能の追加。"Pause"と"Resume"のトラッキングを送信するように修正。DidAllAdsCompleteイベントがコンテンツ再開通知後に発火されるように修正。
