@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/kenjiro-matsuzaki/Desktop/ios_sdk_samples/DACSVASDK-Sample-Swift/DACSVASDK-Sample-Swift.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>

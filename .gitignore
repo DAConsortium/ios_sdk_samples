@@ -10,6 +10,7 @@ xcuserdata/
 Podfile.lock
 Pods/
 Podfile
+BrightcovePlayerSDK.framework/
 
 # Removes Pod WorkSpace
 DACAdsSDK/DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC/DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC.xcworkspace

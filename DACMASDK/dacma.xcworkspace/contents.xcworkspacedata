@@ -2,9 +2,15 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:DACMASDK-Sample-ObjectiveC/DACSDKMA-Sample-ObjectiveC.xcodeproj">
+      location = "group:DACSDKMA-SampleBCOVPlayer-ObjectiveC/DACSDKMA-SampleBCOVPlayer-ObjectiveC.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:DACMASDK-Sample-Swift/DACMASDK-Sample-Swift.xcodeproj">
+      location = "group:DACSDKMA-SampleBCOVPlayer-Swift/DACSDKMA-SampleBCOVPlayer-Swift.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:DACSDKMA-SamplePlayer-ObjectiveC/DACSDKMA-SamplePlayer-ObjectiveC.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:DACSDKMA-SamplePlayer-Swift/DACSDKMA-SamplePlayer-Swift.xcodeproj">
    </FileRef>
 </Workspace>
