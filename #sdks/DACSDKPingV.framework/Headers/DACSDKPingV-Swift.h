@@ -145,7 +145,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) DACSDKPingV 
   デバッグログ出力モード: 初期値は”false”です。
 */
 @property (nonatomic) BOOL debugMode;
+/**
+  oid
+*/
 @property (nonatomic, copy) NSString * _Nonnull _oid;
+/**
+  initialize: 使用する際はシングルトンを使用するため、private属性にする。
+*/
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 /**
   初期化。アプリの起動時などに実行してください。
@@ -156,11 +162,20 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) DACSDKPingV 
 @end
 
 
+/**
+  application data module class.
+*/
 SWIFT_CLASS("_TtC11DACSDKPingV26DACSDKPingVApplicationData")
 @interface DACSDKPingVApplicationData : NSObject
+/**
+  デバッグログ出力モード: 初期値は”false”です。
+*/
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL debugMode;)
 + (BOOL)debugMode;
 + (void)setDebugMode:(BOOL)newValue;
+/**
+  class initialize.
+*/
 + (void)initialize SWIFT_METHOD_FAMILY(none);
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -173,6 +188,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL debugMode;)
 */
 SWIFT_CLASS("_TtC11DACSDKPingV32DACSDKPingVApplicationDataCenter")
 @interface DACSDKPingVApplicationDataCenter : NSObject
+/**
+  シングルトンのインタスンスを返します。
+*/
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) DACSDKPingVApplicationDataCenter * _Nonnull shared;)
 + (DACSDKPingVApplicationDataCenter * _Nonnull)shared;
 /**
@@ -207,32 +225,123 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) DACSDKPingVA
   その他収集データ (任意): replaceExtras(_:)にて設定します。(* readonly)
 */
 @property (nonatomic, readonly, copy) NSDictionary<NSString *, id> * _Nonnull extras;
+/**
+  oidの実体 - phase1
+*/
 @property (nonatomic, copy) NSString * _Nonnull _oid;
+/**
+  AdvertisingID - phase1
+*/
 @property (nonatomic, readonly, copy) NSString * _Nullable idfa;
+/**
+  AdvertisingIDの利用可否(0:可, 1:不可) - phase2
+*/
 @property (nonatomic, readonly) NSInteger idfa_limited;
+/**
+  IPアドレス - phase2
+*/
 @property (nonatomic, readonly, copy) NSString * _Nonnull td_ip;
+/**
+  デフォルト言語設定 - phase2
+*/
 @property (nonatomic, readonly, copy) NSString * _Nullable language;
+/**
+  言語設定/LOCALE - phase1
+*/
 @property (nonatomic, readonly, copy) NSString * _Nonnull locale;
+/**
+  タイムゾーン - phase1
+*/
 @property (nonatomic, readonly, copy) NSString * _Nonnull timezone;
+/**
+  通信キャリア - phase1
+*/
 @property (nonatomic, readonly, copy) NSString * _Nullable carrier;
+/**
+  接続方法（Wi-Fi/キャリア経由) - phase1
+*/
 @property (nonatomic, readonly, copy) NSString * _Nullable network;
+/**
+  SSID - phase2 (* iOS9以降では、取得する際にAppleに承諾を得る必要がある)
+*/
 @property (nonatomic, readonly, copy) NSString * _Nullable ssid;
+/**
+  OS名 - phase1
+*/
 @property (nonatomic, readonly, copy) NSString * _Nonnull os;
+/**
+  OS Version - phase1
+*/
 @property (nonatomic, readonly, copy) NSString * _Nonnull os_version;
+/**
+  User Agent - phase1
+*/
 @property (nonatomic, readonly, copy) NSString * _Nullable useragent;
+/**
+  デバイスメーカー - phase1
+*/
 @property (nonatomic, readonly, copy) NSString * _Nonnull device_maker;
+/**
+  デバイスモデル - phase1
+*/
 @property (nonatomic, readonly, copy) NSString * _Nullable device_model;
+/**
+  端末の画面サイズ:縦 - phase2
+  <ul>
+    <li>
+      アプリ起動直後では正しい値が取得できない場合があるため、都度取得する。
+    </li>
+  </ul>
+*/
 @property (nonatomic, readonly) NSInteger height;
+/**
+  端末の画面サイズ:横 - phase2
+  <ul>
+    <li>
+      アプリ起動直後では正しい値が取得できない場合があるため、都度取得する。
+    </li>
+  </ul>
+*/
 @property (nonatomic, readonly) NSInteger width;
+/**
+  Bundle Identifier - phase1
+*/
 @property (nonatomic, readonly, copy) NSString * _Nullable bundle_id;
+/**
+  アプリ名 - phase1
+*/
 @property (nonatomic, readonly, copy) NSString * _Nullable app_name;
+/**
+  アプリバージョン - phase1
+*/
 @property (nonatomic, readonly, copy) NSString * _Nullable app_version;
+/**
+  url_scheme - phase2
+*/
 @property (nonatomic, readonly, copy) NSString * _Nullable url_scheme;
+/**
+  精度: アプリが設定する (任意) - phase2
+*/
 @property (nonatomic, readonly, copy) NSString * _Nullable location_accuracy;
+/**
+  緯度経度 プロバイダー: 取得しない。- 非対応
+*/
 @property (nonatomic, readonly, copy) NSString * _Nullable location_provider;
+/**
+  経度: アプリが設定する (任意) - phase2
+*/
 @property (nonatomic, readonly, copy) NSString * _Nullable longitude;
+/**
+  緯度: アプリが設定する (任意) - phase2
+*/
 @property (nonatomic, readonly, copy) NSString * _Nullable latitude;
+/**
+  滞在時間: フォアグラウンド開始～バックグラウンド開始までの時間。 (* millisecond) - phase1
+*/
 @property (nonatomic, readonly) NSInteger usagetime;
+/**
+  initialize: 使用する際はシングルトンを使用するため、private属性にする。
+*/
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 /**
   アプリ起動時間を初期化します。
@@ -275,7 +384,13 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) DACSDKPingVA
 
 */
 - (void)send:(void (^ _Nullable)(NSError * _Nullable))completionHandler;
+/**
+  アプリがフォアグラウンドになる。
+*/
 - (void)applicationWillEnterForeground:(NSNotification * _Nonnull)notification;
+/**
+  アプリがバックグラウンドになった。(* 電話着信時などには送信しない。)
+*/
 - (void)applicationDidEnterBackground:(NSNotification * _Nonnull)notification;
 @end
 
@@ -298,12 +413,29 @@ SWIFT_PROTOCOL("_TtP11DACSDKPingV40DACSDKPingVApplicationDataCenterDelegate_")
 @class NSCoder;
 enum DACSDKPingVErrorCode : NSInteger;
 
+/**
+  エラー・クラス
+*/
 SWIFT_CLASS("_TtC11DACSDKPingV16DACSDKPingVError")
 @interface DACSDKPingVError : NSError
+/**
+  エラー・ドメイン
+*/
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull domain;)
 + (NSString * _Nonnull)domain;
+/**
+  initialize: (unavailable).
+*/
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+/**
+  \code
+  initialize: (unavailable).
+
+  \endcode*/
 - (nonnull instancetype)initWithDomain:(NSString * _Nonnull)domain code:(NSInteger)code userInfo:(NSDictionary * _Nullable)dict SWIFT_UNAVAILABLE;
+/**
+  initialize.
+*/
 - (nonnull instancetype)initWithCode:(enum DACSDKPingVErrorCode)code message:(NSString * _Nullable)message error:(NSError * _Nullable)error OBJC_DESIGNATED_INITIALIZER;
 @end
 
