@@ -1,0 +1,360 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F7724C311BCCC37C0045C687 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7724C301BCCC37C0045C687 /* AppDelegate.swift */; };
+		F7724C331BCCC37C0045C687 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7724C321BCCC37C0045C687 /* ViewController.swift */; };
+		F7724C361BCCC37C0045C687 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7724C341BCCC37C0045C687 /* Main.storyboard */; };
+		F7724C381BCCC37C0045C687 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7724C371BCCC37C0045C687 /* Assets.xcassets */; };
+		F7724C3B1BCCC37C0045C687 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7724C391BCCC37C0045C687 /* LaunchScreen.storyboard */; };
+		F7FB7E971E88B9F400D737D9 /* DACSDKMAAdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB7E911E88B9F400D737D9 /* DACSDKMAAdController.swift */; };
+		F7FB7E981E88B9F400D737D9 /* DACSDKMAAdControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB7E921E88B9F400D737D9 /* DACSDKMAAdControlsView.swift */; };
+		F7FB7E991E88B9F400D737D9 /* DACSDKMAAdImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB7E931E88B9F400D737D9 /* DACSDKMAAdImageGenerator.swift */; };
+		F7FB7E9A1E88B9F400D737D9 /* DACSDKMASmartVisionAdPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB7E941E88B9F400D737D9 /* DACSDKMASmartVisionAdPlayer.swift */; };
+		F7FB7E9B1E88B9F400D737D9 /* DACSDKMAUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FB7E951E88B9F400D737D9 /* DACSDKMAUtils.swift */; };
+		F7FB7EAF1E88BA7C00D737D9 /* DACSDKMA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7FB7E8F1E88B9F400D737D9 /* DACSDKMA.framework */; };
+		F7FB7EB01E88BA7C00D737D9 /* DACSDKMA.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F7FB7E8F1E88B9F400D737D9 /* DACSDKMA.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F7724C4C1BCCC4290045C687 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F7FB7EB01E88BA7C00D737D9 /* DACSDKMA.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		F7724C2D1BCCC37C0045C687 /* DACSDKMA-SampleSVAPlayer-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DACSDKMA-SampleSVAPlayer-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7724C301BCCC37C0045C687 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F7724C321BCCC37C0045C687 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F7724C351BCCC37C0045C687 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F7724C371BCCC37C0045C687 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F7724C3A1BCCC37C0045C687 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F7724C3C1BCCC37C0045C687 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7FB7E8F1E88B9F400D737D9 /* DACSDKMA.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DACSDKMA.framework; sourceTree = "<group>"; };
+		F7FB7E911E88B9F400D737D9 /* DACSDKMAAdController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DACSDKMAAdController.swift; sourceTree = "<group>"; };
+		F7FB7E921E88B9F400D737D9 /* DACSDKMAAdControlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DACSDKMAAdControlsView.swift; sourceTree = "<group>"; };
+		F7FB7E931E88B9F400D737D9 /* DACSDKMAAdImageGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DACSDKMAAdImageGenerator.swift; sourceTree = "<group>"; };
+		F7FB7E941E88B9F400D737D9 /* DACSDKMASmartVisionAdPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DACSDKMASmartVisionAdPlayer.swift; sourceTree = "<group>"; };
+		F7FB7E951E88B9F400D737D9 /* DACSDKMAUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DACSDKMAUtils.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F7724C2A1BCCC37C0045C687 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7FB7EAF1E88BA7C00D737D9 /* DACSDKMA.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F7724C241BCCC37C0045C687 = {
+			isa = PBXGroup;
+			children = (
+				F7FB7E8E1E88B9F400D737D9 /* DACSDKMA */,
+				F7724C2F1BCCC37C0045C687 /* DACSDKMA-SampleSVAPlayer-Swift */,
+				F7724C2E1BCCC37C0045C687 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F7724C2E1BCCC37C0045C687 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F7724C2D1BCCC37C0045C687 /* DACSDKMA-SampleSVAPlayer-Swift.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F7724C2F1BCCC37C0045C687 /* DACSDKMA-SampleSVAPlayer-Swift */ = {
+			isa = PBXGroup;
+			children = (
+				F7724C301BCCC37C0045C687 /* AppDelegate.swift */,
+				F7724C321BCCC37C0045C687 /* ViewController.swift */,
+				F7724C341BCCC37C0045C687 /* Main.storyboard */,
+				F7724C371BCCC37C0045C687 /* Assets.xcassets */,
+				F7724C391BCCC37C0045C687 /* LaunchScreen.storyboard */,
+				F7724C3C1BCCC37C0045C687 /* Info.plist */,
+			);
+			path = "DACSDKMA-SampleSVAPlayer-Swift";
+			sourceTree = "<group>";
+		};
+		F7FB7E8E1E88B9F400D737D9 /* DACSDKMA */ = {
+			isa = PBXGroup;
+			children = (
+				F7FB7E8F1E88B9F400D737D9 /* DACSDKMA.framework */,
+				F7FB7E901E88B9F400D737D9 /* src */,
+			);
+			name = DACSDKMA;
+			path = "../../../#lib/DACSDKMA/universal";
+			sourceTree = "<group>";
+		};
+		F7FB7E901E88B9F400D737D9 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				F7FB7E911E88B9F400D737D9 /* DACSDKMAAdController.swift */,
+				F7FB7E921E88B9F400D737D9 /* DACSDKMAAdControlsView.swift */,
+				F7FB7E931E88B9F400D737D9 /* DACSDKMAAdImageGenerator.swift */,
+				F7FB7E941E88B9F400D737D9 /* DACSDKMASmartVisionAdPlayer.swift */,
+				F7FB7E951E88B9F400D737D9 /* DACSDKMAUtils.swift */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F7724C2C1BCCC37C0045C687 /* DACSDKMA-SampleSVAPlayer-Swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7724C3F1BCCC37C0045C687 /* Build configuration list for PBXNativeTarget "DACSDKMA-SampleSVAPlayer-Swift" */;
+			buildPhases = (
+				F7724C291BCCC37C0045C687 /* Sources */,
+				F7724C2A1BCCC37C0045C687 /* Frameworks */,
+				F7724C2B1BCCC37C0045C687 /* Resources */,
+				F7724C4C1BCCC4290045C687 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DACSDKMA-SampleSVAPlayer-Swift";
+			productName = "DACSDKMA-SampleSVAPlayer-Swift";
+			productReference = F7724C2D1BCCC37C0045C687 /* DACSDKMA-SampleSVAPlayer-Swift.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F7724C251BCCC37C0045C687 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = D.A.Consortium.;
+				TargetAttributes = {
+					F7724C2C1BCCC37C0045C687 = {
+						CreatedOnToolsVersion = 7.0.1;
+						LastSwiftMigration = 0810;
+					};
+				};
+			};
+			buildConfigurationList = F7724C281BCCC37C0045C687 /* Build configuration list for PBXProject "DACSDKMA-SampleSVAPlayer-Swift" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F7724C241BCCC37C0045C687;
+			productRefGroup = F7724C2E1BCCC37C0045C687 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F7724C2C1BCCC37C0045C687 /* DACSDKMA-SampleSVAPlayer-Swift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F7724C2B1BCCC37C0045C687 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7724C3B1BCCC37C0045C687 /* LaunchScreen.storyboard in Resources */,
+				F7724C381BCCC37C0045C687 /* Assets.xcassets in Resources */,
+				F7724C361BCCC37C0045C687 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F7724C291BCCC37C0045C687 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7724C331BCCC37C0045C687 /* ViewController.swift in Sources */,
+				F7FB7E971E88B9F400D737D9 /* DACSDKMAAdController.swift in Sources */,
+				F7724C311BCCC37C0045C687 /* AppDelegate.swift in Sources */,
+				F7FB7E991E88B9F400D737D9 /* DACSDKMAAdImageGenerator.swift in Sources */,
+				F7FB7E981E88B9F400D737D9 /* DACSDKMAAdControlsView.swift in Sources */,
+				F7FB7E9B1E88B9F400D737D9 /* DACSDKMAUtils.swift in Sources */,
+				F7FB7E9A1E88B9F400D737D9 /* DACSDKMASmartVisionAdPlayer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F7724C341BCCC37C0045C687 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7724C351BCCC37C0045C687 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F7724C391BCCC37C0045C687 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7724C3A1BCCC37C0045C687 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F7724C3D1BCCC37C0045C687 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../../../#lib/DACSDKMA/universal";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F7724C3E1BCCC37C0045C687 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../../../#lib/DACSDKMA/universal";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F7724C401BCCC37C0045C687 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "DACSDKMA-SampleSVAPlayer-Swift/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.dac.DACSDKMA-SampleSVAPlayer-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F7724C411BCCC37C0045C687 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "DACSDKMA-SampleSVAPlayer-Swift/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "jp.co.dac.DACSDKMA-SampleSVAPlayer-Swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F7724C281BCCC37C0045C687 /* Build configuration list for PBXProject "DACSDKMA-SampleSVAPlayer-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7724C3D1BCCC37C0045C687 /* Debug */,
+				F7724C3E1BCCC37C0045C687 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7724C3F1BCCC37C0045C687 /* Build configuration list for PBXNativeTarget "DACSDKMA-SampleSVAPlayer-Swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7724C401BCCC37C0045C687 /* Debug */,
+				F7724C411BCCC37C0045C687 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F7724C251BCCC37C0045C687 /* Project object */;
+}
