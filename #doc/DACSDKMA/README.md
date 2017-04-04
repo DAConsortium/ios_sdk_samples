@@ -1,6 +1,6 @@
 ## DAC Multimedia Ads SDK
 
-Version 2.0.1
+Version 2.0.2
 
 ### Overview
 
@@ -40,6 +40,9 @@ manual.mdをご参照ください。
 
 
 ### History
+* Version 2.0.2 : 2017/04/03
+    - 以下のエラーにより、ビルドできない問題を修正。  
+        - Missing required modules: 'DACSDKMAModule.Crypto', 'DACSDKMAModule'
 * Version 2.0.1 : 2017/03/29
     - BundleVersionを数値とコンマのみで現すように修正。
     - AdViewがどのWindowにも属さなくなった時に自動クリーンする機能を廃止。
