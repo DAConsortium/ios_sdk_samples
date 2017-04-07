@@ -1,6 +1,6 @@
 ## DAC Multimedia Ads SDK
 
-Version 2.0.2
+Version 2.0.3
 
 ### Overview
 
@@ -40,6 +40,8 @@ manual.mdをご参照ください。
 
 
 ### History
+* Version 2.0.3 : 2017/04/07
+    - SmartVisionAdPlayerにて、エンドカード表示時にリプレイボタンをタップしてもリプレイされないバグを修正。 
 * Version 2.0.2 : 2017/04/03
     - 以下のエラーにより、ビルドできない問題を修正。  
         - Missing required modules: 'DACSDKMAModule.Crypto', 'DACSDKMAModule'

@@ -444,6 +444,7 @@ open class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DACSD
      必要に応じて、動画広告を停止する。
      - Returns: 停止した場合、true。停止しない場合、false。
      */
+    @discardableResult
     private func stopIfNeeded() -> Bool {
         guard let adsManager = self.adsManager else { return false }
         var result: Bool = false
@@ -1111,7 +1112,7 @@ open class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DACSD
             self.videoAdControlsView?.playbackStatus = DACSDKMAAdVideoPlaybackStates.stopped
             self.showCompanionAtStop()
             break
-        case DACSDKMAAdEventType.didResume:
+        case DACSDKMAAdEventType.didResume, DACSDKMAAdEventType.didRewind:
             self.videoAdControlsView?.playbackStatus = DACSDKMAAdVideoPlaybackStates.playing
             self.hideCompanionAtStop()
             break
@@ -1119,7 +1120,7 @@ open class DACSDKMASmartVisionAdPlayer: UIView, DACSDKMAAdsLoaderDelegate, DACSD
             if DACSDKMAAdVideoPlaybackStates.playing == self.videoAdControlsView?.playbackStatus {
                 // 再生時のみ、ステータス変更をする。停止中から一時停止にはしない。
                 self.videoAdControlsView?.playbackStatus = DACSDKMAAdVideoPlaybackStates.pausing
-                _ = self.stopIfNeeded()
+                self.stopIfNeeded()
             }
             break
         case DACSDKMAAdEventType.didStop:
