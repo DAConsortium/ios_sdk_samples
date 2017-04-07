@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>DACSDKPingVApplicationDataCenter Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/DACSDKPingVApplicationDataCenter" class="dashAnchor"></a>
+    <a title="DACSDKPingVApplicationDataCenter Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">DACSDKPingV Docs</a> (100% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">DACSDKPingV Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        DACSDKPingVApplicationDataCenter Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/DACSDKPingV.html">DACSDKPingV</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DACSDKPingVApplicationDataCenter.html">DACSDKPingVApplicationDataCenter</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/DACSDKPingVErrorCode.html">DACSDKPingVErrorCode</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/DACSDKPingVApplicationDataCenterDelegate.html">DACSDKPingVApplicationDataCenterDelegate</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>DACSDKPingVApplicationDataCenter</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">DACSDKPingVApplicationDataCenter</span><span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+
+                </div>
+              </div>
+            <p>アプリの情報などを収集し、DACのサーバーへ通知するためのクラス。</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/config"></a>
+                <a name="//apple_ref/swift/Section/config" class="dashAnchor"></a>
+                <a href="#/config">
+                  <h3 class="section-name">config</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC11DACSDKPingV32DACSDKPingVApplicationDataCenter8autoSendSb"></a>
+                    <a name="//apple_ref/swift/Property/autoSend" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC11DACSDKPingV32DACSDKPingVApplicationDataCenter8autoSendSb">autoSend</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>アプリケーションデータ・自動送信フラグ: 初期値は<q>true</q>です。trueの場合、アプリケーションがバックグラウンドに遷移する際に収集したデータを送信します。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">autoSend</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC11DACSDKPingV32DACSDKPingVApplicationDataCenter11autoRestartSb"></a>
+                    <a name="//apple_ref/swift/Property/autoRestart" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC11DACSDKPingV32DACSDKPingVApplicationDataCenter11autoRestartSb">autoRestart</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>アプリケーション起動時間・自動更新フラグ: 初期値は<q>true</q>です。trueの場合、アプリケーションがフォアグラウンドに遷移した際に起動時間が初期化されます。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">autoRestart</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/delegate"></a>
+                <a name="//apple_ref/swift/Section/delegate" class="dashAnchor"></a>
+                <a href="#/delegate">
+                  <h3 class="section-name">delegate</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC11DACSDKPingV32DACSDKPingVApplicationDataCenter8delegateXwGSqPS_40DACSDKPingVApplicationDataCenterDelegate__"></a>
+                    <a name="//apple_ref/swift/Property/delegate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC11DACSDKPingV32DACSDKPingVApplicationDataCenter8delegateXwGSqPS_40DACSDKPingVApplicationDataCenterDelegate__">delegate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>リクエスト結果通知用 delegate (任意)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">delegate</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DACSDKPingVApplicationDataCenterDelegate.html">DACSDKPingVApplicationDataCenterDelegate</a></span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/properties"></a>
+                <a name="//apple_ref/swift/Section/properties" class="dashAnchor"></a>
+                <a href="#/properties">
+                  <h3 class="section-name">properties</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC11DACSDKPingV32DACSDKPingVApplicationDataCenter3oidSS"></a>
+                    <a name="//apple_ref/swift/Property/oid" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC11DACSDKPingV32DACSDKPingVApplicationDataCenter3oidSS">oid</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>データオーナーIDハッシュ (* 必須): DACSDKPingV.shared.setup(oid:)にて設定します。(* readonly)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">oid</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC11DACSDKPingV32DACSDKPingVApplicationDataCenter7page_idGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/page_id" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC11DACSDKPingV32DACSDKPingVApplicationDataCenter7page_idGSqSS_">page_id</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>ページ識別子 (任意)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">page_id</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC11DACSDKPingV32DACSDKPingVApplicationDataCenter9event_idsGSaSS_"></a>
+                    <a name="//apple_ref/swift/Property/event_ids" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC11DACSDKPingV32DACSDKPingVApplicationDataCenter9event_idsGSaSS_">event_ids</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>イベント識別子 (任意): * sendApplicationData()が実行される毎に「空の配列」で初期化されます。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">event_ids</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC11DACSDKPingV32DACSDKPingVApplicationDataCenter8locationGSqCSo10CLLocation_"></a>
+                    <a name="//apple_ref/swift/Property/location" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC11DACSDKPingV32DACSDKPingVApplicationDataCenter8locationGSqCSo10CLLocation_">location</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>位置情報 (任意): locationのコピーを保持し、それを返します。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">location</span><span class="p">:</span> <span class="kt">CLLocation</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC11DACSDKPingV32DACSDKPingVApplicationDataCenter6extrasGVs10DictionarySSP__"></a>
+                    <a name="//apple_ref/swift/Property/extras" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC11DACSDKPingV32DACSDKPingVApplicationDataCenter6extrasGVs10DictionarySSP__">extras</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>その他収集データ (任意): replaceExtras(_:)にて設定します。(* readonly)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">extras</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Any</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/functions"></a>
+                <a name="//apple_ref/swift/Section/functions" class="dashAnchor"></a>
+                <a href="#/functions">
+                  <h3 class="section-name">functions</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC11DACSDKPingV32DACSDKPingVApplicationDataCenter7restartFT_T_"></a>
+                    <a name="//apple_ref/swift/Method/restart()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC11DACSDKPingV32DACSDKPingVApplicationDataCenter7restartFT_T_">restart()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>アプリ起動時間を初期化します。</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">restart</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC11DACSDKPingV32DACSDKPingVApplicationDataCenter13replaceExtrasFGVs10DictionarySSP__Sb"></a>
+                    <a name="//apple_ref/swift/Method/replaceExtras(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC11DACSDKPingV32DACSDKPingVApplicationDataCenter13replaceExtrasFGVs10DictionarySSP__Sb">replaceExtras(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>extrasを入れ替えます。JSON化できない場合は、入れ替えできません。</p>
+
+<ul>
+<li>Top level object is an NSArray or NSDictionary.</li>
+<li>All objects are NSString, NSNumber, NSArray, NSDictionary, or NSNull.</li>
+<li>All dictionary keys are NSStrings.</li>
+<li><p>NSNumbers are not NaN or infinity.</p></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">replaceExtras</span><span class="p">(</span><span class="n">_</span> <span class="nv">extras</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>extras</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>JSONデータ。</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>成功した場合はtrue、失敗した場合はfalse。</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC11DACSDKPingV32DACSDKPingVApplicationDataCenter4sendFGSqFGSqPs5Error__T__T_"></a>
+                    <a name="//apple_ref/swift/Method/send(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC11DACSDKPingV32DACSDKPingVApplicationDataCenter4sendFGSqFGSqPs5Error__T__T_">send(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>アプリケーション情報をサーバーにリクエストします。</p>
+
+<ul>
+<li>setup()時にautoSendApplicationDataを有効にしている場合、アプリがバックラグラウンドに遷移した際に自動的に実行されます。<br></li>
+<li><p>delegateが有効な場合、先にdelegateに通知したのちにcompletionHandlerが実行されます。</p></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">send</span><span class="p">(</span><span class="n">_</span> <span class="nv">completionHandler</span><span class="p">:</span> <span class="p">((</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completionHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>リクエスト完了後に起動するクロージャーです。リクエスト時にエラーが発生した場合、それがErrorの引数として渡されます。エラーコードについては、DACSDKPingVErrorCodeを参照ください。</p>
+
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="https://www.dac.co.jp/" target="_blank" rel="external">D.A.Consortium Inc.</a>. All rights reserved. (Last updated: 2017-03-29)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:DACNativeAdSDK-Sample-ObjectiveC/DACNativeAdSDK-Sample-ObjectiveC.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:DACNativeAdSDK-Sample-Swift/DACNativeAdSDK-Sample-Swift.xcodeproj">
+   </FileRef>
+</Workspace>

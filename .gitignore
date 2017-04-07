@@ -1,18 +1,49 @@
+##################################################
+# OS
+##################################################
 .DS_Store
+
+
+##################################################
+# Xcode
+##################################################
+#----- Build generated -----
+build/
+DerivedData/
+
+##----- Various ----- 
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
 xcuserdata/
 
-#
-# Xcode 5 introduced a new file type .xccheckout. This files contains VCS metadata
-# and should therefore not be checked into the VCS.
-# 
+#----- Other -----
+*.moved-aside
 *.xccheckout
+*.xcscmblueprint
+*.xcuserstate
 
-Podfile.lock
+
+##################################################
+# jazzy
+##################################################
+build/
+docsets/
+undocumented.json
+
+
+##################################################
+# CocoaPods
+##################################################
 Pods/
+Podfile.lock
 Podfile
-BrightcovePlayerSDK.framework/
 
-# Removes Pod WorkSpace
-DACAdsSDK/DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC/DACAdsSDK-FBAudienceNetwork-Sample-ObjectiveC.xcworkspace
-DACMASDK/DACMASDK-Brightcove-Sample-ObjC/DACMASDK-Brightcove-Sample-ObjC.xcworkspace
-DACMASDK/DACMASDK-Brightcove-Sample-Swift/DACMASDK-Brightcove-Sample-Swift.xcworkspace
+##################################################
+# Others
+##################################################
