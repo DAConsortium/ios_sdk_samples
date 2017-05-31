@@ -35,7 +35,7 @@ Examples of the UnSupported
 
 ### Install
 
-manual.mdをご参照ください。
+reference.htmlをご参照ください。
 また同封の SamplePlayer-Swift は動画プレーヤーアプリにPreroll広告を出す例となっております。
 
 
